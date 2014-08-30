@@ -1,29 +1,37 @@
 window.onload = function() {
 
+
+
+
+  TweenLite.set(envelop_cover, {perspective: 500});
+  TweenLite.set(envelop_cover, {transformOrigin:"center 0"});
+  TweenLite.to(envelop_cover, 2, {rotationX: -180, delay: 1});
+
+
+
+
   var tl = new TimelineMax({
     paused: true
   });
 
-  tl.add(TweenMax.to(arrow, 1, {
-    bottom: "5%",
-    opacity: 1,
-    // ease:Bounce.easeOut,
-    repeat: -1,
-    // repeatDelay:2, 
-    yoyo: true
-      // delay: 1
-  }), 'starter');
+  // tl.add(TweenMax.to(arrow, 1, {
+  //   bottom: "5%",
+  //   opacity: 1,
+  //   // ease:Bounce.easeOut,
+  //   repeat: -1,
+  //   // repeatDelay:2, 
+  //   yoyo: true
+  //     // delay: 1
+  // }), 'starter');
 
-  tl.set("#icon", {visibility:"visible"}).add(TweenLite.from(icon, 1, {
-    scaleX: 0,
-    scaleY: 0,
-    opacity: 1,
-    ease: Bounce.easeOut,
-  }), 'starter');
-
-// tl.totalProgress()
+  // tl.set("#icon", {visibility:"visible"}).add(TweenLite.from(icon, 1, {
+  //   scaleX: 0,
+  //   scaleY: 0,
+  //   opacity: 1,
+  //   ease: Bounce.easeOut,
+  // }), 'starter');
  
-  tl.play('starter');
+  // tl.play('starter');
 
 }
 
@@ -69,12 +77,10 @@ $(document).ready(function() {
     tl.play('swipeUp');
 
     TweenLite.set(scene_1, {perspective: 500});
-	//offset the origin on the z-axis to make the spins more interesting.
-	// TweenLite.set(scene_1, {transformOrigin:"center center -150px"});
-
-	// rotationY += 360;
-	TweenLite.set(icon2, {transformOrigin:"center center -50px"});
-  	TweenLite.to(icon2, 2, {rotationX: 180, ease:Power1.easeInOut, delay: 1});
+	
+	
+	  // TweenLite.set(envelop_cover, {transformOrigin:"center center -50px"});
+  	TweenLite.to(envelop_cover, 2, {rotationX: -180, ease:Power1.easeInOut, delay: 1});
 
   });
 

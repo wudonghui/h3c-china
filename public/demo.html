@@ -7,8 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
 
   <style type="text/css">
+  
   .scene {
-    /*background: url(h3c/sprites/bg@640x1036.jpg) no-repeat center center;*/
+
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -30,28 +36,23 @@
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ebc88c', endColorstr='#9b7236', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
   }
-  .scene {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
+
   .scene.hide {
     /*display: none;*/
     /*visibility: hidden;*/
   }
+
   .scene .sprite {
     position: absolute;
     opacity: 0;
   }
+
+  .scene .element {
+    position: absolute;
+  }
   </style>
-
-  <script src="js/jquery-1.9.1.min.js"></script>
-  <script src="js/TweenMax.min.js" /></script>
-  <script src="js/quo.js"></script>
-  <script src="js/nobounce.js"></script>
-
 </head>
+
 
 <body style="overflow: hidden; margin: 0;">
 
@@ -60,22 +61,38 @@
 
 
     <div class="scene hide" id="scene_1">
-      <img class="sprite" id="icon2" src="h3c/sprites/icon2.0.0.png" style="left: 50%; margin-left: -42px; opacity: 1; top: 20%;">
+      
     </div>
 
     <div class="scene splash" id="scene_0">
-      <img class="sprite" id="icon" src="h3c/sprites/icon2.0.0.png" style="left: 50%; margin-left: -42px; opacity: 1;">
+      <!-- cloud -->
+      <img class="element" id="cloudbottom" src="h3c/sprites/cloud@640x390.png" style="bottom: 0; width: 100%;">
+      <img class="element" id="cloudtop" src="h3c/sprites/cloud@640x268.png" style="top: 0; width: 100%;">
+
+      <!-- animated sprites -->
+      
+      <img class="sprite" id="envelop" src="h3c/sprites/envelop.png" style="left: 50%; margin-left: -100px; opacity: 1; top: 15%;">
+
+
+      <img class="sprite" id="envelop_cover" src="h3c/sprites/envelop-cover.png" style="left: 50%; margin-left: -100px; opacity: 1; top: 15%;">
+
+
+      <!-- <img class="sprite" id="icon" src="h3c/sprites/icon2.0.0.png" style="left: 50%; margin-left: -42px; opacity: 1;"> -->
 
       <img class="sprite" id="arrow" src="h3c/sprites/arrow-up@134x133.png" style="left: 50%; margin-left: -62px;">
 
-      <img class="sprite" id="cloudbottom" src="h3c/sprites/cloud@640x390.png" style="bottom: 0; opacity: 1; width: 100%;">
-      <img class="sprite" id="cloudtop" src="h3c/sprites/cloud@640x268.png" style="top: 0; opacity: 1; width: 100%;">
     </div>
 
 
   </div>
 
+
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/TweenMax.min.js" /></script>
+  <script src="js/quo.js"></script>
+  <script src="js/nobounce.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
+
 </body>
 
 </html>
