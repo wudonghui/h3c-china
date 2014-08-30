@@ -8,11 +8,27 @@
 
   <style type="text/css">
   .scene {
-    background: url(h3c/sprites/bg@640x1036.jpg) no-repeat center center;
+    /*background: url(h3c/sprites/bg@640x1036.jpg) no-repeat center center;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background: #ebc88c;
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, #ebc88c 0%, #9b7236 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #ebc88c), color-stop(100%, #9b7236));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg, #ebc88c 0%, #9b7236 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg, #ebc88c 0%, #9b7236 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg, #ebc88c 0%, #9b7236 100%);
+    /* IE10+ */
+    background: linear-gradient(45deg, #ebc88c 0%, #9b7236 100%);
+    /* W3C */
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ebc88c', endColorstr='#9b7236', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
   }
   .scene {
     display: block;
@@ -51,6 +67,9 @@
       <img class="sprite" id="icon" src="h3c/sprites/icon2.0.0.png" style="left: 50%; margin-left: -42px; opacity: 1;">
 
       <img class="sprite" id="arrow" src="h3c/sprites/arrow-up@134x133.png" style="left: 50%; margin-left: -62px;">
+
+      <img class="sprite" id="cloudbottom" src="h3c/sprites/cloud@640x390.png" style="bottom: 0; opacity: 1;">
+      <img class="sprite" id="cloudtop" src="h3c/sprites/cloud@640x268.png" style="top: 0; opacity: 1;">
     </div>
 
 
