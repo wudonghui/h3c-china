@@ -32,8 +32,13 @@
   }
   /*all sprites inital state is hidden*/
   .scene .sprite {
-    /*opacity: 0;*/
+    opacity: 0;
   }
+
+  .scene .baseline {
+    top: 15%;
+  } 
+
   </style>
 </head>
 
@@ -57,23 +62,20 @@
 
       <!-- animation sprites -->
       <!-- envelop body -->
-      <img class="sprite" id="envelop" src="h3c/sprites/scene_1/envelop.png" style="left: 50%; margin-left: -75px; top: 20%;">
+      <img class="sprite baseline envelop" id="envelop" src="h3c/sprites/scene_1/envelop.png" style="left: 50%; margin-left: -75px;">
 
       <!-- envelop cover -->
-      <div class="sprite" id="cover" style="width: 150px; height: 51px; top: 20%; -webkit-transform-style: preserve-3d; -webkit-perspective: 800; -webkit-perspective-origin: 100% 100%; left: 50%; margin-left: -75px;">
+      <div class="sprite baseline envelop" id="cover" style="width: 150px; height: 51px; -webkit-transform-style: preserve-3d; -webkit-perspective: 800; -webkit-perspective-origin: 100% 100%; left: 50%; margin-left: -75px;">
 
-        <img class="sprite" id="envelop_cover_back" src="h3c/sprites/scene_1/envelop-cover.png" style="-webkit-backface-visibility: hidden; display: block; -webkit-transform: rotateX(180deg); -webkit-transform: rotateY(180deg);">
+        <!-- <img id="envelop_cover_back" src="h3c/sprites/scene_1/envelop-cover.png" style="-webkit-backface-visibility: hidden; position:absolute; display: block; -webkit-transform: rotateX(180deg); -webkit-transform: rotateY(180deg);"> -->
 
-        <img class="sprite" id="envelop_cover" src="h3c/sprites/scene_1/envelop-cover.png" style="-webkit-backface-visibility: hidden; display: block;">
+        <img id="envelop_cover" src="h3c/sprites/scene_1/envelop-cover.png" style="-webkit-backface-visibility: hidden; display: block; position:absolute;">
 
       </div>
 
       <!-- text -->
-      <img class="sprite" src="h3c/sprites/scene_1/icon@20x90.png" style="left: 50%; top: 20%; margin-left: -20px; margin-top: 60px;">
-      <img class="sprite" src="h3c/sprites/scene_1/text@36x150.png" style="left: 50%; top: 20%; margin-left: 10px; margin-top: 70px;">
-
-      
-      <img class="sprite arrow" src="h3c/sprites/arrow@50x50.png" style="left: 50%; margin-left: -25px; bottom: 0;">
+      <img class="sprite baseline icon" src="h3c/sprites/scene_1/icon@20x90.png" style="left: 50%; margin-left: -20px; margin-top: 60px;">
+      <img class="sprite baseline text" src="h3c/sprites/scene_1/text@36x150.png" style="left: 50%; margin-left: 10px; margin-top: 70px;">
 
     </div>
 
@@ -88,20 +90,21 @@
       <!-- <img class="element" id="cloudbottom" src="h3c/sprites/scene_1/cloud@640x390.png" style="bottom: 0; width: 100%;"> -->
 
       <!-- mountain  -->
+      <img class="element" src="h3c/sprites/scene_2/curve.png" style="margin-left: 35px;">
       <img class="element" src="h3c/sprites/scene_2/mountain@200x124.png" style="margin-left: -100px;">
       <img class="element" src="h3c/sprites/scene_2/cloud@640x554.png" style="width: 100%">
 
       
 
-
       <!-- book -->
-      <img class="sprite" src="h3c/sprites/scene_2/book@80x90.png" style="left: 50%; margin-left: -100px; top: 50%;">
+      <img class="sprite baseline book" src="h3c/sprites/scene_2/book@80x90.png" style="left: 50%; margin-left: -100px; opacity: 1;">
+
+      <!-- icon -->
+      <img class="sprite baseline icon" src="h3c/sprites/scene_2/icon.png" style="left: 50%; margin-left: -100px; margin-top: 130px;">
 
       <!-- text -->
-      <img class="sprite" src="h3c/sprites/scene_2/text@200x60.png" style="left: 50%; margin-left: -100px; top: 30%;">
-      <img class="sprite" src="h3c/sprites/scene_2/yun@80x86.png" style="left: 50%; margin-left: -6px; top: 30%; margin-top: -20px;">
-
-      <img class="sprite arrow" src="h3c/sprites/arrow@50x50.png" style="left: 50%; margin-left: -25px; bottom: 0;">
+      <img class="sprite baseline text" src="h3c/sprites/scene_2/text@200x60.png" style="left: 50%; margin-left: -100px; margin-top: 50px; ">
+      <img class="sprite baseline yun" src="h3c/sprites/scene_2/yun@80x86.png" style="left: 50%; margin-left: -6px; margin-top: 30px;">
 
     </div>
 
@@ -113,12 +116,11 @@
 
       <img class="element" id="cloudbottom" src="h3c/sprites/scene_1/cloud@640x390.png" style="bottom: 0; width: 100%;">
 
-
-      <img class="sprite arrow" src="h3c/sprites/arrow@50x50.png" style="left: 50%; margin-left: -25px; bottom: 0;">
-
     </div>
 
 
+
+    <img class="arrow" src="h3c/sprites/arrow@24x24.png" style="left: 50%; margin-left: -12px; bottom: 0; opacity: 0; position: absolute; z-index: 1000;">
 
     <!-- close of viewport -->
   </div>
