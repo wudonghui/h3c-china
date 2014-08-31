@@ -1,0 +1,137 @@
+<html lang="en">
+
+<head>
+  <meta charset="gbk">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
+
+  <style type="text/css">
+  .scene {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background: #ebc88c;
+    background: -moz-linear-gradient(45deg, #ebc88c 0%, #9b7236 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #ebc88c), color-stop(100%, #9b7236));
+    background: -webkit-linear-gradient(45deg, #ebc88c 0%, #9b7236 100%);
+    background: -o-linear-gradient(45deg, #ebc88c 0%, #9b7236 100%);
+    background: -ms-linear-gradient(45deg, #ebc88c 0%, #9b7236 100%);
+    background: linear-gradient(45deg, #ebc88c 0%, #9b7236 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ebc88c', endColorstr='#9b7236', GradientType=1);
+  }
+  /*all sprites, elements should be position as absolute*/
+  .scene .sprite,
+  .scene .element {
+    position: absolute;
+  }
+  /*all sprites inital state is hidden*/
+  .scene .sprite {
+    opacity: 0;
+  }
+
+  .scene .baseline {
+    top: 15%;
+  } 
+
+  </style>
+</head>
+
+
+<body style="overflow: hidden; margin: 0;">
+
+  <!-- viewport -->
+  <div class="viewport" id="viewport" style="overflow: hidden; width: 100%; height: 100%;">
+
+    <!-- stack of scenes -->
+
+    <!-- splash scene -->
+    <!-- todo -->
+
+
+    <!-- scene_1 splash -->
+    <div class="scene" id="scene_1" style="z-index: 999;">
+      <!-- clouds -->
+      <img class="element" id="cloudbottom" src="h3c/sprites/scene_1/cloud@640x390.png" style="bottom: 0; width: 100%;">
+      <img class="element" id="cloudtop" src="h3c/sprites/scene_1/cloud@640x268.png" style="top: 0; width: 100%;">
+
+      <!-- animation sprites -->
+      <!-- envelop body -->
+      <img class="sprite baseline letter" id="envelop" src="h3c/sprites/scene_1/letter@140x227.png" style="left: 50%; margin-left: -70px; z-index: 2;">
+
+      <img class="sprite baseline envelop" id="envelop" src="h3c/sprites/scene_1/envelop-new.png" style="left: 50%; margin-left: -75px; z-index: 3">
+
+      <!-- envelop cover -->
+
+      <img class="sprite baseline cover" id="envelop_cover" src="h3c/sprites/scene_1/envelop-cover.png" style="left: 50%; margin-left: -75px;z-index: 4;">
+
+
+      <!-- text -->
+      <img class="sprite baseline icon" src="h3c/sprites/scene_1/icon@20x90.png" style="left: 50%; margin-left: -20px; margin-top: 60px; z-index: 4;">
+      <img class="sprite baseline text" src="h3c/sprites/scene_1/text@36x150.png" style="left: 50%; margin-left: 10px; margin-top: 70px; z-index: 4;">
+
+    </div>
+
+
+
+
+
+    <!-- scene_2 -->
+    <div class="scene" id="scene_2" style="z-index: 998">
+
+      <img class="sprite curve" src="h3c/sprites/scene_2/curve_long.png" style="margin-left: 35px;">
+
+      <img class="element" src="h3c/sprites/scene_2/cloud@640x218.png" style="width: 100%; bottom: 0;">
+
+      <!-- mountain  -->
+      
+      <img class="element" src="h3c/sprites/scene_2/mountain@200x124.png" style="margin-left: -100px;">
+      <img class="element" src="h3c/sprites/scene_2/cloud@640x554.png" style="width: 100%">
+      
+    
+      <img class="sprite baseline texttop" src="h3c/sprites/scene_2/text_top.png" style="margin-top: -20px; margin-left: -75px;">
+      <!-- book -->
+      <img class="sprite baseline book" src="h3c/sprites/scene_2/book@80x90.png">
+      <img class="sprite baseline textbook" src="h3c/sprites/scene_2/text_book.png" style="margin-top: 200px; margin-left: -25px;">
+
+      <!-- icon -->
+      <img class="sprite baseline icon" src="h3c/sprites/scene_2/icon.png" style="left: 50%; margin-left: -100px; margin-top: 130px;">
+
+      <!-- text -->
+      <img class="sprite baseline text" src="h3c/sprites/scene_2/text@200x60.png" style="left: 50%; margin-left: -100px; margin-top: 50px; ">
+      <img class="sprite baseline yun" src="h3c/sprites/scene_2/yun@80x86.png" style="left: 50%; margin-left: -6px; margin-top: 30px;">
+
+    </div>
+
+
+
+
+    <!-- scene 3 -->
+    <div class="scene" id="scene_3" style="z-index: 99">
+
+      <img class="element" id="cloudbottom" src="h3c/sprites/scene_1/cloud@640x390.png" style="bottom: 0; width: 100%;">
+
+    </div>
+
+
+
+    <img class="arrow" src="h3c/sprites/arrow@24x24.png" style="left: 50%; margin-left: -12px; bottom: 0; opacity: 0; position: absolute; z-index: 1000;">
+
+    <!-- close of viewport -->
+  </div>
+
+
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/TweenMax.min.js" /></script>
+  <script src="js/quo.js"></script>
+  <script src="js/nobounce.js"></script>
+  <script type="text/javascript" src="js/h3c.js"></script>
+
+</body>
+
+</html>

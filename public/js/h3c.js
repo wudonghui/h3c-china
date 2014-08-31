@@ -103,25 +103,34 @@ timelines.scene_1 = function(onStart, onComplete) {
     onComplete: onComplete
   });
 
-  tl.add(TweenLite.to('#scene_1 .envelop', 1, {
-    opacity: 1,
-    ease: Power1.easeIn,
-  }));
+  tl.to('#scene_1 .cover', 1, {
+      opacity: 1,
+      ease: Power1.easeIn,
+    })
+    .to('#scene_1 .envelop', 1, {
+      opacity: 1,
+      ease: Power1.easeIn,
+    }, "-=0.75")
+    .to('#scene_1 .text', 1, {
+      opacity: 1,
+      ease: Power1.easeIn,
+    })
+    .fromTo('#scene_1 .icon', 1, {
+      scaleX: 0,
+      scaleY: 0
+    }, {
+      opacity: 1,
+      scaleX: 1,
+      scaleY: 1,
+      ease: Bounce.easeOut
+    })
+    .set('#scene_1', {perspective: 800})
+    .set('#scene_1 .cover', {transformOrigin: 'center 0 0'})
+    .to('#scene_1 .cover', 2, {rotationX: 180})
+    .set('#scene_1 .cover', {zIndex:1}, "-=1")
+    .to('#scene_1 .letter', 2, {top: '10px', autoAlpha: true}, "-=1.25")
+    .to(['#scene_1 .envelop', '#scene_1 .cover', '#scene_1 .text', '#scene_1 .icon'], 1, {top: '20%'}, "-=2");
 
-  tl.add(TweenLite.to('#scene_1 .text', 1, {
-    opacity: 1,
-    ease: Power1.easeIn,
-  }));
-
-  tl.add(TweenLite.fromTo('#scene_1 .icon', 1, {
-    scaleX: 0,
-    scaleY: 0
-  }, {
-    opacity: 1,
-    scaleX: 1,
-    scaleY: 1,
-    ease: Bounce.easeOut
-  }));
   return tl;
 };
 
@@ -135,38 +144,51 @@ timelines.scene_2 = function(onStart, onComplete) {
     onComplete: onComplete
   });
 
-  tl.add(TweenLite.fromTo('#scene_2 .text', 1, {
+  tl.fromTo('#scene_2 .texttop', 1, {
+    left: '100%',
+  }, {
+    left: '50%',
+    autoAlpha: true,
+    ease: Bounce.easeOut,
+  })
+  .fromTo('#scene_2 .text', 1, {
     left: '0%',
   }, {
     left: '50%',
-    opacity: 1,
+    autoAlpha: true,
     ease: Bounce.easeOut,
-  }));
-
-  tl.add(TweenLite.fromTo(['#scene_2 .yun', '#scene_2 .icon'], 1, {
+  })
+  .fromTo(['#scene_2 .yun', '#scene_2 .icon'], 1, {
     scaleX: 0,
     scaleY: 0
   }, {
-    opacity: 1,
+    autoAlpha: true,
     scaleX: 1,
     scaleY: 1,
     ease: Bounce.easeOut
-  }));
+  })
 
+  .to('#scene_2 .curve', 0.5, {autoAlpha: true})
 
-  tl.add(TweenMax.to('#scene_2 .book', 5, {
-    bezier: [{
-      left: 100,
-      top: 250
-    }, {
-      left: 300,
-      top: 0
-    }, {
-      left: 500,
-      top: 400
+  .to('#scene_2 .book', 1.5, {
+    bezier: {
+      values: [{
+      left: 90,
+      top: 250,
     }],
+      // autoRotate: true,
+    },
+    autoAlpha: true,
     ease: Power1.easeInOut
-  }));
+  }, "-=0.25")
+
+  .fromTo('#scene_2 .textbook', 1, {
+    left: '100%',
+  }, {
+    left: '50%',
+    autoAlpha: true,
+    ease: Bounce.easeOut,
+  });
 
   return tl;
 };
