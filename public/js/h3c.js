@@ -174,7 +174,7 @@ timelines.scene_2 = function(onStart, onComplete) {
     bezier: {
       values: [{
       left: 90,
-      top: 250,
+      top: 240,
     }],
       // autoRotate: true,
     },
