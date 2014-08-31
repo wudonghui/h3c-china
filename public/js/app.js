@@ -3,9 +3,9 @@ window.onload = function() {
 
 
 
-  TweenLite.set(envelop_cover, {perspective: 500});
-  TweenLite.set(envelop_cover, {transformOrigin:"center 0"});
-  TweenLite.to(envelop_cover, 2, {rotationX: -180, delay: 1});
+  TweenLite.set(scene_0, {perspective: 800});
+  TweenLite.set(cover, {transformOrigin:"center 0px"});
+  TweenLite.to(cover, 2, {rotationX: 130, delay: 1});
 
 
 
