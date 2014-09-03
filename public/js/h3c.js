@@ -107,24 +107,24 @@ timelines.scene_1 = function(onStart, onComplete) {
       autoAlpha: true,
       ease: Power1.easeIn,
     })
-    .to(['#scene_1 .envelop', '#scene_1 .envelop_white'], 2, {
+    .to('#scene_1 .envelop', 2, {
       autoAlpha: true,
       ease: Power1.easeIn,
     }, "-=1.5")
-    // .set('#scene_1 .envelop_white', {opacity: 1})
+    .set('#scene_1 .envelop_white', {opacity: 1})
 
     .set(".cover", {perspective:800})
     .set(".cover", {transformStyle:"preserve-3d"})
     .set(".coverback", {rotationX:-180, opacity: 1})
     .set([".coverback", ".coverfront"], {backfaceVisibility:"hidden"})
-    .to('#scene_1 .cover', 5, {rotationX: 180})
+    .to('#scene_1 .cover', 3, {rotationX: 140})
 
-    .set('#scene_1 .cover', {zIndex:1}, "-=2")
-    .set('#scene_1 .letter', {zIndex:2}, "-=2")
-    .set('#scene_1 .envelop', {zIndex:3}, "-=2")
-    .set('#scene_1 .letter', {opacity:1}, "-=2")
-    .to('#scene_1 .letter', 2, {top: '3%'}, "-=2")
-    .to(['#scene_1 .envelop', '#scene_1 .cover'], 2, {top: '20%'}, "-=2");
+    .set('#scene_1 .cover', {zIndex:1}, "-=1")
+    .set('#scene_1 .letter', {zIndex:2}, "-=1")
+    .set('#scene_1 .envelop', {zIndex:3}, "-=1")
+    .set('#scene_1 .letter', {opacity:1}, "-=1")
+    .to('#scene_1 .letter', 2, {top: '3%'}, "-=1")
+    // .to(['#scene_1 .envelop', '#scene_1 .cover'], 2, {top: '20%'}, "-=2");
 
   return tl;
 };
