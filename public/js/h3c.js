@@ -103,7 +103,7 @@ timelines.scene_1 = function(onStart, onComplete) {
     onComplete: onComplete
   });
 
-  tl.to('#scene_1 .cover', 1, {
+  tl.to('#scene_1 .coverfront', 1, {
       opacity: 1,
       ease: Power1.easeIn,
     })
@@ -111,25 +111,21 @@ timelines.scene_1 = function(onStart, onComplete) {
       opacity: 1,
       ease: Power1.easeIn,
     }, "-=0.75")
-    .to('#scene_1 .text', 1, {
-      opacity: 1,
-      ease: Power1.easeIn,
-    })
-    .fromTo('#scene_1 .icon', 1, {
-      scaleX: 0,
-      scaleY: 0
-    }, {
-      opacity: 1,
-      scaleX: 1,
-      scaleY: 1,
-      ease: Bounce.easeOut
-    })
-    .set('#scene_1', {perspective: 800})
-    .set('#scene_1 .cover', {transformOrigin: 'center 0 0'})
-    .to('#scene_1 .cover', 2, {rotationX: 180})
-    .set('#scene_1 .cover', {zIndex:1}, "-=1")
-    .to('#scene_1 .letter', 2, {top: '10px', autoAlpha: true}, "-=1.25")
-    .to(['#scene_1 .envelop', '#scene_1 .cover', '#scene_1 .text', '#scene_1 .icon'], 1, {top: '20%'}, "-=2");
+    .set('#scene_1 .envelop_white', {opacity: 1})
+
+    .set(".cover", {perspective:800})
+    // .set(".cover", {transformOrigin:"center 0"})
+    .set(".cover", {transformStyle:"preserve-3d"})
+    .set(".coverback", {rotationX:-180, opacity: 1})
+    .set([".coverback", ".coverfront"], {backfaceVisibility:"hidden"})
+    .to('#scene_1 .cover', 4, {rotationX: 180})
+
+    .set('#scene_1 .cover', {zIndex:1}, "-=2")
+    .set('#scene_1 .letter', {zIndex:2}, "-=2")
+    .set('#scene_1 .envelop', {zIndex:3}, "-=2")
+    .set('#scene_1 .letter', {opacity:1}, "-=2")
+    .to('#scene_1 .letter', 2, {top: '3%'}, "-=2")
+    .to(['#scene_1 .envelop', '#scene_1 .cover'], 2, {top: '20%'}, "-=2");
 
   return tl;
 };
