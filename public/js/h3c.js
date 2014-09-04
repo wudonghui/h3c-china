@@ -74,19 +74,32 @@ function swipeUp(event) {
     },
     onComplete: function() {
       m.isTransition = false;
+      $('#scene_' + (m.currentScene - 1)).addClass('hidden');
       $('#viewport').trigger('playScene', 'scene_' + m.currentScene);
     }
   });
 
-  tl.add(TweenMax.to(scene, 1, {
+  // tl.add(TweenMax.to(scene, 1, {
+  //   top: "-100%",
+  // }), 'swipeUp');
+
+  // tl.add(TweenLite.from(comingScene, 1, {
+  //   top: "100%",
+  // }), 'swipeUp');
+
+  // tl.play('swipeUp');
+
+  tl.to(scene, 1.5, {
     top: "-100%",
-  }), 'swipeUp');
-
-  tl.add(TweenLite.from(comingScene, 1, {
+    // ease: Power1.easeIn,
+  }).set(comingScene, {'visibility': 'visible'}, "-=1.5")
+  .from(comingScene, 1.5, {
     top: "100%",
-  }), 'swipeUp');
+    // ease: Power1.easeIn,
+  }, "-=1.5");
 
-  tl.play('swipeUp');
+  tl.play();
+
   m.currentScene += 1;
 };
 
@@ -123,8 +136,8 @@ timelines.scene_1 = function(onStart, onComplete) {
     .set('#scene_1 .letter', {zIndex:2}, "-=1")
     .set('#scene_1 .envelop', {zIndex:3}, "-=1")
     .set('#scene_1 .letter', {opacity:1}, "-=1")
-    .to('#scene_1 .letter', 2, {top: '3%'}, "-=1")
-    // .to(['#scene_1 .envelop', '#scene_1 .cover'], 2, {top: '20%'}, "-=2");
+    .to('#scene_1 .letter', 2, {top: '0%'}, "-=1")
+    .to(['#scene_1 .envelop', '#scene_1 .cover'], 2, {top: '20%'}, "-=2");
 
   return tl;
 };
@@ -139,48 +152,36 @@ timelines.scene_2 = function(onStart, onComplete) {
     onComplete: onComplete
   });
 
-  tl.fromTo('#scene_2 .texttop', 1, {
-    left: '100%',
+  tl.fromTo('#scene_2 .texttop', 1.5, {
+    left: '100%'
   }, {
     left: '50%',
     autoAlpha: true,
     ease: Bounce.easeOut,
   })
-  .fromTo('#scene_2 .text', 1, {
-    left: '0%',
+
+  .fromTo('#scene_2 .icon', 1.5, {
+    top: '0%',
   }, {
-    left: '50%',
+    top: '40%',
     autoAlpha: true,
     ease: Bounce.easeOut,
   })
-  .fromTo(['#scene_2 .yun', '#scene_2 .icon'], 1, {
+
+  .fromTo('#scene_2 .book', 1.5, {
     scaleX: 0,
     scaleY: 0
   }, {
     autoAlpha: true,
     scaleX: 1,
     scaleY: 1,
-    ease: Bounce.easeOut
+    // ease: Bounce.easeOut
   })
-
-  .to('#scene_2 .curve', 0.5, {autoAlpha: true})
-
-  .to('#scene_2 .book', 1.5, {
-    bezier: {
-      values: [{
-      left: 90,
-      top: 240,
-    }],
-      // autoRotate: true,
-    },
-    autoAlpha: true,
-    ease: Power1.easeInOut
-  }, "-=0.25")
-
-  .fromTo('#scene_2 .textbook', 1, {
-    left: '100%',
+  
+  .fromTo('#scene_2 .textbottom', 1.5, {
+    right: '0%',
   }, {
-    left: '50%',
+    right: '30%',
     autoAlpha: true,
     ease: Bounce.easeOut,
   });
