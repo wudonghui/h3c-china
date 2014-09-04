@@ -3,7 +3,7 @@
 // model
 var m = {
   currentScene: 1,
-  numberOfScenes: 3,
+  numberOfScenes: 7,
   isTransition: false,
   isAnimating: false,
   arrowTween: null,
@@ -76,7 +76,7 @@ function swipeUp(event) {
     },
     onComplete: function() {
       m.isTransition = false;
-      $('#scene_' + (m.currentScene - 1)).addClass('hidden');
+      $('#scene_' + (m.currentScene - 1)).css('visibility', 'hidden');
       $('#viewport').trigger('playScene', 'scene_' + m.currentScene);
     }
   });
@@ -159,7 +159,7 @@ timelines.scene_2 = function(onStart, onComplete) {
   }, {
     left: '50%',
     autoAlpha: true,
-    ease: Bounce.easeOut,
+    // ease: Bounce.easeOut,
   })
 
   .fromTo('#scene_2 .icon', 1.5, {
@@ -170,14 +170,14 @@ timelines.scene_2 = function(onStart, onComplete) {
     ease: Bounce.easeOut,
   })
 
-  .fromTo('#scene_2 .book', 1.5, {
+  .fromTo('#scene_2 .book', 1, {
     scaleX: 0,
     scaleY: 0
   }, {
     autoAlpha: true,
     scaleX: 1,
     scaleY: 1,
-    // ease: Bounce.easeOut
+    ease: Bounce.easeOut
   })
   
   .fromTo('#scene_2 .textbottom', 1.5, {
@@ -185,7 +185,7 @@ timelines.scene_2 = function(onStart, onComplete) {
   }, {
     right: '10%',
     autoAlpha: true,
-    // ease: Bounce.easeOut,
+    ease: Bounce.easeOut,
   });
 
   return tl;
@@ -243,6 +243,88 @@ timelines.scene_3 = function(onStart, onComplete) {
     top: "60%"
     // ease: Bounce.easeOut
   })
+
+  .fromTo('#scene_3 .after', 1.5, {
+    scaleX: 0,
+    scaleY: 0,
+  }, {
+    autoAlpha: true,
+    scaleX: 1,
+    scaleY: 1,
+    ease: Bounce.easeOut
+  })
+
+  .to('#scene_3 .textbottom', 1, {
+    autoAlpha: true
+  })
+
+
+  return tl;
+};
+
+
+
+
+
+
+// scene_4
+timelines.scene_4 = function(onStart, onComplete) {
+  var tl = new TimelineMax({
+    paused: true,
+    onStart: onStart,
+    onComplete: onComplete
+  });
+
+  tl.to('#scene_4 .mountain', 5, {
+    autoAlpha: true,
+  })
+
+  .fromTo('#scene_4 .textbottom1', 1.5, {
+    bottom: '0%'
+  }, {
+    bottom: '20%',
+    autoAlpha: true,
+  })
+  
+  .to('#scene_4 .textbottom2', 1, {
+    autoAlpha: true
+  })
+
+  // .fromTo('#scene_3 .gs1', 1.5, {
+  //   scaleX: 0,
+  //   scaleY: 0
+  // }, {
+  //   autoAlpha: true,
+  //   scaleX: 1,
+  //   scaleY: 1,
+  //   ease: Bounce.easeOut
+  // })
+
+  // .fromTo('#scene_3 .plane', 1.5, {
+  //   scaleX: 0,
+  //   scaleY: 0,
+  //   top: "0%"
+  // }, {
+  //   autoAlpha: true,
+  //   scaleX: 1,
+  //   scaleY: 1,
+  //   top: "60%"
+  //   // ease: Bounce.easeOut
+  // })
+
+  // .fromTo('#scene_3 .after', 1.5, {
+  //   scaleX: 0,
+  //   scaleY: 0,
+  // }, {
+  //   autoAlpha: true,
+  //   scaleX: 1,
+  //   scaleY: 1,
+  //   ease: Bounce.easeOut
+  // })
+
+  // .to('#scene_3 .textbottom', 1, {
+  //   autoAlpha: true
+  // })
 
 
   return tl;
