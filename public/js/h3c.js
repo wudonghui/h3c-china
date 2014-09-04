@@ -20,6 +20,8 @@ $(document).ready(function() {
 
 window.onload = function() {
 
+  $('.scene.hidden').css('visibility', 'hidden');
+
   // register swipe event
   $$('#viewport').swipeUp(swipeUp);
 
@@ -89,14 +91,14 @@ function swipeUp(event) {
 
   // tl.play('swipeUp');
 
-  tl.to(scene, 1.5, {
+  tl.to(scene, 1, {
     top: "-100%",
     // ease: Power1.easeIn,
-  }).set(comingScene, {'visibility': 'visible'}, "-=1.5")
-  .from(comingScene, 1.5, {
+  }).set(comingScene, {'visibility': 'visible'}, "-=1")
+  .from(comingScene, 1, {
     top: "100%",
     // ease: Power1.easeIn,
-  }, "-=1.5");
+  }, "-=1");
 
   tl.play();
 
@@ -181,7 +183,7 @@ timelines.scene_2 = function(onStart, onComplete) {
   .fromTo('#scene_2 .textbottom', 1.5, {
     right: '0%',
   }, {
-    right: '30%',
+    right: '10%',
     autoAlpha: true,
     // ease: Bounce.easeOut,
   });
@@ -228,6 +230,18 @@ timelines.scene_3 = function(onStart, onComplete) {
     scaleX: 1,
     scaleY: 1,
     ease: Bounce.easeOut
+  })
+
+  .fromTo('#scene_3 .plane', 1.5, {
+    scaleX: 0,
+    scaleY: 0,
+    top: "0%"
+  }, {
+    autoAlpha: true,
+    scaleX: 1,
+    scaleY: 1,
+    top: "60%"
+    // ease: Bounce.easeOut
   })
 
 
