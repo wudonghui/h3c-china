@@ -131,6 +131,7 @@ var timelines = {};
 // scene_1
 timelines.scene_1 = function(onStart, onComplete) {
   var tl = new TimelineMax({
+    delay: 1,
     paused: true,
     onStart: onStart,
     onComplete: onComplete
@@ -190,6 +191,7 @@ timelines.scene_1 = function(onStart, onComplete) {
 // scene_2
 timelines.scene_2 = function(onStart, onComplete) {
   var tl = new TimelineMax({
+    delay: 1,
     paused: true,
     onStart: onStart,
     onComplete: onComplete
