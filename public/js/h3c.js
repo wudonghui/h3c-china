@@ -136,8 +136,8 @@ timelines.scene_1 = function(onStart, onComplete) {
     .set('#scene_1 .letter', {zIndex:2}, "-=1")
     .set('#scene_1 .envelop', {zIndex:3}, "-=1")
     .set('#scene_1 .letter', {opacity:1}, "-=1")
-    .to('#scene_1 .letter', 2, {top: '0%'}, "-=1")
-    .to(['#scene_1 .envelop', '#scene_1 .cover'], 2, {top: '20%'}, "-=2");
+    .to('#scene_1 .letter', 1.5, {top: '0%'}, "-=1")
+    // .to(['#scene_1 .envelop', '#scene_1 .cover'], 2, {top: '20%'}, "-=2");
 
   return tl;
 };
@@ -183,8 +183,53 @@ timelines.scene_2 = function(onStart, onComplete) {
   }, {
     right: '30%',
     autoAlpha: true,
-    ease: Bounce.easeOut,
+    // ease: Bounce.easeOut,
   });
+
+  return tl;
+};
+
+
+
+
+
+
+// scene_3
+timelines.scene_3 = function(onStart, onComplete) {
+  var tl = new TimelineMax({
+    paused: true,
+    onStart: onStart,
+    onComplete: onComplete
+  });
+
+  tl.fromTo('#scene_3 .texttop', 1.5, {
+    top: '0%'
+  }, {
+    top: '10%',
+    autoAlpha: true,
+    // ease: Bounce.easeOut,
+  })
+  .fromTo('#scene_3 .textmiddle', 1.5, {
+    right: '0%'
+  }, {
+    right: '20%',
+    autoAlpha: true,
+    // ease: Bounce.easeOut,
+  })
+  .to('#scene_3 .korea', 1, {
+    autoAlpha: true
+  })
+
+  .fromTo('#scene_3 .gs1', 1.5, {
+    scaleX: 0,
+    scaleY: 0
+  }, {
+    autoAlpha: true,
+    scaleX: 1,
+    scaleY: 1,
+    ease: Bounce.easeOut
+  })
+
 
   return tl;
 };
