@@ -107,16 +107,16 @@ function swipeUp(event) {
 
   // tl.play('swipeUp');
 
-  tl.to(scene, 1, {
+  tl.to(scene, 1.5, {
       top: "-100%",
       // ease: Power1.easeIn,
     }).set(comingScene, {
       'visibility': 'visible'
-    }, "-=1")
-    .from(comingScene, 1, {
+    }, "-=1.5")
+    .from(comingScene, 1.5, {
       top: "100%",
       // ease: Power1.easeIn,
-    }, "-=1");
+    }, "-=1.5");
 
   tl.play();
 
@@ -422,6 +422,7 @@ timelines.scene_5 = function(onStart, onComplete) {
 
   .fromTo('#scene_5 .h', 1, {
     top: "0%",
+    left: "18%",
   }, {
     autoAlpha: true,
     top: "30%",
