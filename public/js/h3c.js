@@ -109,13 +109,13 @@ function swipeUp(event) {
 
   tl.to(scene, 1.5, {
       top: "-100%",
-      // ease: Power1.easeIn,
+      ease: Power1.easeOut,
     }).set(comingScene, {
       'visibility': 'visible'
     }, "-=1.5")
     .from(comingScene, 1.5, {
       top: "100%",
-      // ease: Power1.easeIn,
+      ease: Power1.easeOut,
     }, "-=1.5");
 
   tl.play();
