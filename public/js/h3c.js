@@ -203,6 +203,14 @@ timelines.scene_2 = function(onStart, onComplete) {
     // ease: Bounce.easeOut,
   })
 
+  .fromTo('#scene_2 .yun', 1.5, {
+    right: '100%'
+  }, {
+    right: '50%',
+    autoAlpha: true,
+    // ease: Bounce.easeOut,
+  })
+
   .fromTo('#scene_2 .icon', 1.5, {
     top: '0%',
   }, {
@@ -218,13 +226,13 @@ timelines.scene_2 = function(onStart, onComplete) {
     autoAlpha: true,
     scaleX: 1,
     scaleY: 1,
-    ease: Bounce.easeOut
+    // ease: Bounce.easeOut
   })
 
   .fromTo('#scene_2 .textbottom', 1.5, {
     right: '0%',
   }, {
-    right: '10%',
+    right: '15%',
     autoAlpha: true,
     // ease: Bounce.easeOut,
   });
@@ -338,8 +346,11 @@ timelines.scene_4 = function(onStart, onComplete) {
     onComplete: onComplete
   });
 
-  tl.to('#scene_4 .mountain', 1, {
-    opacity: 1,
+  tl.fromTo('#scene_4 .mountain', 1.5, {
+    top: '0%'
+  }, {
+    top: '25%',
+    autoAlpha: true,
   })
 
   .fromTo('#scene_4 .textbottom1', 1.5, {
@@ -349,51 +360,42 @@ timelines.scene_4 = function(onStart, onComplete) {
     autoAlpha: true,
   })
 
+  .fromTo('#scene_4 .iconleft', 1.5, {
+    top: '0%'
+  }, {
+    top: '10%',
+    autoAlpha: true,
+    ease: Bounce.easeOut
+  })
+
+  .fromTo('#scene_4 .iconright', 1.5, {
+    top: '0%'
+  }, {
+    top: '20%',
+    autoAlpha: true,
+    ease: Bounce.easeOut
+  }, "-=0.5")
+
+  .fromTo('#scene_4 .iconmiddle', 1.5, {
+    top: '0%'
+  }, {
+    top: '15%',
+    autoAlpha: true,
+    ease: Bounce.easeOut
+  }, "-=0.5")
+
+
   .to('#scene_4 .textbottom2', 1, {
     autoAlpha: true
   })
 
-  // .fromTo('#scene_3 .gs1', 1.5, {
-  //   scaleX: 0,
-  //   scaleY: 0
-  // }, {
-  //   autoAlpha: true,
-  //   scaleX: 1,
-  //   scaleY: 1,
-  //   ease: Bounce.easeOut
-  // })
-
-  // .fromTo('#scene_3 .plane', 1.5, {
-  //   scaleX: 0,
-  //   scaleY: 0,
-  //   top: "0%"
-  // }, {
-  //   autoAlpha: true,
-  //   scaleX: 1,
-  //   scaleY: 1,
-  //   top: "60%"
-  //   // ease: Bounce.easeOut
-  // })
-
-  // .fromTo('#scene_3 .after', 1.5, {
-  //   scaleX: 0,
-  //   scaleY: 0,
-  // }, {
-  //   autoAlpha: true,
-  //   scaleX: 1,
-  //   scaleY: 1,
-  //   ease: Bounce.easeOut
-  // })
-
-  // .to('#scene_3 .textbottom', 1, {
-  //   autoAlpha: true
-  // })
-
-
+ 
   return tl;
 };
 
 
+
+// scene_5
 
 timelines.scene_5 = function(onStart, onComplete) {
   var tl = new TimelineMax({
@@ -408,6 +410,40 @@ timelines.scene_5 = function(onStart, onComplete) {
     right: "40%",
     autoAlpha: true
   })
+
+  .fromTo('#scene_5 .circle', 1.5, {
+    scaleX: 0,
+    scaleY: 0,
+  }, {
+    autoAlpha: true,
+    scaleX: 1,
+    scaleY: 1,
+  })
+
+  .fromTo('#scene_5 .h', 1, {
+    top: "0%",
+  }, {
+    autoAlpha: true,
+    top: "30%",
+    left: "18%",
+  }, "-=1")
+  .fromTo('#scene_5 .k', 1, {
+    top: "30%",
+    left: "120%"
+  }, {
+    autoAlpha: true,
+    top: "30%",
+    left: "25%",
+  }, "-=1")
+  .fromTo('#scene_5 .g', 1, {
+    top: "50%",
+    left: "-20%",
+  }, {
+    autoAlpha: true,
+    top: "37%",
+    left: "7%",
+  }, "-=1")
+
 
   tl.fromTo('#scene_5 .textmiddle', 1.5, {
     right: "0%",
