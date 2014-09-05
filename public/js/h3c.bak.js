@@ -2,15 +2,12 @@
 
 // model
 var m = {
-  currentScene: 2,
+  currentScene: 1,
   numberOfScenes: 8,
   isTransition: false,
   isAnimating: false,
   arrowTween: null,
-  envelopArrowTween:null,
-  currentTimeline: null,
-
-  splash: true // on splash page
+  currentTimeline: null
 };
 
 $(document).ready(function() {
@@ -32,7 +29,7 @@ window.onload = function() {
   $('#viewport').on('playScene', playScene);
 
   // init the first scene
-  $('#viewport').trigger('playScene', 'scene_2');
+  $('#viewport').trigger('playScene', 'scene_1');
 
 
   var tl = new TimelineMax({
@@ -52,27 +49,21 @@ window.onload = function() {
 
 function playScene(event, scene) {
   // console.log('play scene', event, scene);
-  var tl = timelines[scene](
-    // on start
-    function() {
+  var tl = timelines[scene](function() {
       m.isAnimating = true;
     },
-    // on complete
     function() {
       m.isAnimating = false;
       if (m.arrowTween.isActive)
         m.arrowTween.resume();
       else
         m.arrowTween.play();
-      if(m.currentScene < m.numberOfScenes)
-        $('.arrow').show();
+      $('.arrow').show();
     });
   tl.play();
 };
 
-
 function swipeUp(event) {
-
   // do nothing if currentScene is the last scene
   if (m.isTransition || m.isAnimating) {
     // console.log('transition or animation is running...');
@@ -84,37 +75,7 @@ function swipeUp(event) {
     return false;
   }
 
-  // open evelop
-  if(m.splash) {
-
-    console.log('running splash');
-    if (m.envelopArrowTween.isActive){
-          m.envelopArrowTween.pause();
-          $('.enveloparrow').hide();
-    }
-
-    var tl = timelines['open'](
-    // on start
-    function() {
-      m.isAnimating = true;
-    },
-      // on complete
-      function() {
-        m.isAnimating = false;
-        if (m.arrowTween.isActive)
-          m.arrowTween.resume();
-        else
-          m.arrowTween.play();
-        $('.arrow').show();
-      });
-    tl.play();
-
-    return false;
-  }
-
-  
-
-  console.log('transit from ', m.currentScene, ' to ', m.currentScene + 1);
+  // console.log('transit from ', m.currentScene, ' to ', m.currentScene + 1);
 
   var scene = '#scene_' + (m.currentScene);
   var comingScene = '#scene_' + (m.currentScene + 1);
@@ -135,6 +96,15 @@ function swipeUp(event) {
     }
   });
 
+  // tl.add(TweenMax.to(scene, 1, {
+  //   top: "-100%",
+  // }), 'swipeUp');
+
+  // tl.add(TweenLite.from(comingScene, 1, {
+  //   top: "100%",
+  // }), 'swipeUp');
+
+  // tl.play('swipeUp');
 
   tl.to(scene, 1.25, {
       top: "-100%",
@@ -158,67 +128,27 @@ function swipeUp(event) {
 var timelines = {};
 
 // scene_1
-timelines.scene_2 = function(onStart, onComplete) {
-
+timelines.scene_1 = function(onStart, onComplete) {
   var tl = new TimelineMax({
+    delay: 1,
     paused: true,
     onStart: onStart,
-    onComplete: function(){
-      m.isAnimating = false;
-
-      // play the envelop arrow
-      var tlm = new TimelineMax({
-        paused: true,
-      });
-
-      tlm.to('.enveloparrow', 1, {
-        top: "19%",
-        autoAlpha: true,
-        repeat: -1,
-        yoyo: true
-      });
-
-      m.envelopArrowTween = tlm;
-
-      tlm.play();
-    }
+    onComplete: onComplete
   });
 
-  tl.to('#scene_2 .coverfront', 2, {
+  tl.to('#scene_1 .coverfront', 2, {
       autoAlpha: true,
       ease: Power1.easeIn,
     })
-    .to('#scene_2 .envelop', 2, {
+    .to('#scene_1 .envelop', 2, {
       autoAlpha: true,
       ease: Power1.easeIn,
     }, "-=1.5")
-    .set('#scene_2 .envelop_white', {
+    .set('#scene_1 .envelop_white', {
       opacity: 1
     })
 
-  return tl;
-};
-
-
-
-timelines.open = function(onStart, onComplete) {
-  var tl = new TimelineMax({
-    paused: true,
-    onStart: onStart,
-    onComplete: function() {
-        m.splash = false;
-        m.isAnimating = false;
-        // m.currentScene = 2;
-
-        if (m.arrowTween.isActive)
-          m.arrowTween.resume();
-        else
-          m.arrowTween.play();
-        $('.arrow').show();
-      }
-  });
-
-  tl.set(".cover", {
+  .set(".cover", {
       perspective: 800
     })
     .set(".cover", {
@@ -231,143 +161,85 @@ timelines.open = function(onStart, onComplete) {
     .set([".coverback", ".coverfront"], {
       backfaceVisibility: "hidden"
     })
-    .to('#scene_2 .cover', 3, {
+    .to('#scene_1 .cover', 3, {
       rotationX: 140
     })
 
-  .set('#scene_2 .cover', {
+  .set('#scene_1 .cover', {
       zIndex: 1
     }, "-=1")
-    .set('#scene_2 .letter', {
+    .set('#scene_1 .letter', {
       zIndex: 2
     }, "-=1")
-    .set('#scene_2 .envelop', {
+    .set('#scene_1 .envelop', {
       zIndex: 3
     }, "-=1")
-    .set('#scene_2 .letter', {
+    .set('#scene_1 .letter', {
       opacity: 1
     }, "-=1")
-    .to('#scene_2 .letter', 1, {
+    .to('#scene_1 .letter', 1.5, {
       top: '0%'
     }, "-=1")
-    
-    
-    .to('#scene_2 .letter', 1.5, {
-      width: '100%',
-      height: '100%',
-      top: '0%',
-      left: '0%',
-      marginLeft: '0',
-    })
-
-    .to(['#scene_2 .envelop', '#scene_2 .envelop_white', '#scene_2 .cover'], 1, {top: '120%'}, "-=2")
-    .set(['#scene_2 .envelop', '#scene_2 .envelop_white', '#scene_2 .cover'], {'visibility': 'hidden'})
-
-    .set('#scene_2 .letter', {zIndex: 0})
-
-    // scene 2 animation  
-    .fromTo('#scene_2 .texttop', 1, {
-      left: '100%'
-    }, {
-      left: '50%',
-      autoAlpha: true,
-      // ease: Bounce.easeOut,
-    })
-
-    .fromTo('#scene_2 .yun', 1, {
-      right: '100%'
-    }, {
-      right: '50%',
-      autoAlpha: true,
-      // ease: Bounce.easeOut,
-    }, "-=0.5")
-
-    .fromTo('#scene_2 .icon', 1, {
-      top: '0%',
-    }, {
-      top: '40%',
-      autoAlpha: true,
-      ease: Bounce.easeOut,
-    }, "-=0.5")
-
-    .fromTo('#scene_2 .book', 1, {
-      scaleX: 0,
-      scaleY: 0
-    }, {
-      autoAlpha: true,
-      scaleX: 1,
-      scaleY: 1,
-      // ease: Bounce.easeOut
-    })
-
-    .fromTo('#scene_2 .textbottom', 1, {
-      right: '0%',
-    }, {
-      right: '15%',
-      autoAlpha: true,
-      // ease: Bounce.easeOut,
-    }, "-=0.5");
-
+    // .to(['#scene_1 .envelop', '#scene_1 .cover'], 2, {top: '20%'}, "-=2");
 
   return tl;
 };
 
 
 
-
 // scene_2
-// timelines.scene_2 = function(onStart, onComplete) {
-//   var tl = new TimelineMax({
-//     delay: 0.5,
-//     paused: true,
-//     onStart: onStart,
-//     onComplete: onComplete
-//   });
+timelines.scene_2 = function(onStart, onComplete) {
+  var tl = new TimelineMax({
+    delay: 0.5,
+    paused: true,
+    onStart: onStart,
+    onComplete: onComplete
+  });
 
-//   tl.fromTo('#scene_2 .texttop', 1, {
-//     left: '100%'
-//   }, {
-//     left: '50%',
-//     autoAlpha: true,
-//     // ease: Bounce.easeOut,
-//   })
+  tl.fromTo('#scene_2 .texttop', 1, {
+    left: '100%'
+  }, {
+    left: '50%',
+    autoAlpha: true,
+    // ease: Bounce.easeOut,
+  })
 
-//   .fromTo('#scene_2 .yun', 1, {
-//     right: '100%'
-//   }, {
-//     right: '50%',
-//     autoAlpha: true,
-//     // ease: Bounce.easeOut,
-//   }, "-=0.5")
+  .fromTo('#scene_2 .yun', 1, {
+    right: '100%'
+  }, {
+    right: '50%',
+    autoAlpha: true,
+    // ease: Bounce.easeOut,
+  }, "-=0.5")
 
-//   .fromTo('#scene_2 .icon', 1, {
-//     top: '0%',
-//   }, {
-//     top: '40%',
-//     autoAlpha: true,
-//     ease: Bounce.easeOut,
-//   }, "-=0.5")
+  .fromTo('#scene_2 .icon', 1, {
+    top: '0%',
+  }, {
+    top: '40%',
+    autoAlpha: true,
+    ease: Bounce.easeOut,
+  }, "-=0.5")
 
-//   .fromTo('#scene_2 .book', 1, {
-//     scaleX: 0,
-//     scaleY: 0
-//   }, {
-//     autoAlpha: true,
-//     scaleX: 1,
-//     scaleY: 1,
-//     // ease: Bounce.easeOut
-//   })
+  .fromTo('#scene_2 .book', 1, {
+    scaleX: 0,
+    scaleY: 0
+  }, {
+    autoAlpha: true,
+    scaleX: 1,
+    scaleY: 1,
+    // ease: Bounce.easeOut
+  })
 
-//   .fromTo('#scene_2 .textbottom', 1, {
-//     right: '0%',
-//   }, {
-//     right: '15%',
-//     autoAlpha: true,
-//     // ease: Bounce.easeOut,
-//   }, "-=0.5");
+  .fromTo('#scene_2 .textbottom', 1, {
+    right: '0%',
+  }, {
+    right: '15%',
+    autoAlpha: true,
+    // ease: Bounce.easeOut,
+  }, "-=0.5");
 
-//   return tl;
-// };
+  return tl;
+};
 
 
 

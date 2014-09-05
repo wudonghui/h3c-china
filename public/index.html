@@ -4,7 +4,7 @@
   <meta charset="gbk">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,target-densitydpi=device-dpi">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <style type="text/css">
   .scene {
@@ -12,18 +12,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
     background: #ebc88c;
-    background: -moz-linear-gradient(45deg, #ebc88c 0%, #9b7236 100%);
-    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #ebc88c), color-stop(100%, #9b7236));
-    background: -webkit-linear-gradient(45deg, #ebc88c 0%, #9b7236 100%);
-    background: -o-linear-gradient(45deg, #ebc88c 0%, #9b7236 100%);
-    background: -ms-linear-gradient(45deg, #ebc88c 0%, #9b7236 100%);
-    background: linear-gradient(45deg, #ebc88c 0%, #9b7236 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ebc88c', endColorstr='#9b7236', GradientType=1);
   }
   /*all sprites, elements should be position as absolute*/
   .scene .sprite,
@@ -50,77 +39,204 @@
 
     <!-- stack of scenes -->
 
-    <!-- splash scene -->
-    <!-- todo -->
-
-
     <!-- scene_1 splash -->
-    <div class="scene" id="scene_1" style="z-index: 999;">
-      <!-- clouds -->
-      <img class="element" id="cloudbottom" src="h3c/sprites/scene_1/cloud@640x390.png" style="bottom: 0; width: 100%;">
-      <img class="element" id="cloudtop" src="h3c/sprites/scene_1/cloud@640x268.png" style="top: 0; width: 100%;">
+    <div class="scene" id="scene_2" style="z-index: 999;">
+      <!-- bg -->
+      <img class="element" src="sprites/bg_scene_1_and_2.jpg" style="width: 100%; height: 100%;">
+
 
       <!-- animation sprites -->
-      <!-- envelop body -->
-      <img class="sprite baseline letter" id="envelop" src="h3c/sprites/scene_1/letter@140x227.png" style="left: 50%; margin-left: -70px; z-index: 2;">
+      <!-- envelop -->
 
-      <img class="sprite baseline envelop" id="envelop" src="h3c/sprites/scene_1/envelop-new.png" style="left: 50%; margin-left: -75px; z-index: 3">
+      <div class="sprite baseline envelop_white" style="width: 46%; height: 10%; display: block; background: white; left: 50%; margin-left: -23%;"></div>
+      
+      <!-- <img class="sprite baseline letter" src="sprites/scene_1/letter.jpg" style="margin-top: 20px; width: 40%; left: 50%; margin-left: -20%;"> -->
+      <img class="sprite baseline letter" src="sprites/bg_scene_3.jpg" style="width: 40%; left: 50%; margin-left: -20%;">
+
+      <img class="sprite baseline envelop" src="sprites/scene_1/envelop_main.png" style="width: 50%; left: 50%; margin-left: -25%; ">
 
       <!-- envelop cover -->
+      <div class="cover" style="position: absolute; top: 15%; width: 100%;"> 
+      <img class="sprite coverfront" src="sprites/scene_1/envelop_cover.png" style="width: 48%; left: 50%; margin-left: -24%; ">
+      <img class="sprite coverback" src="sprites/scene_1/envelop_cover_back.png" style="width: 48%; left: 50%; margin-left: -24%; ">
+      </div>
 
-      <img class="sprite baseline cover" id="envelop_cover" src="h3c/sprites/scene_1/envelop-cover.png" style="left: 50%; margin-left: -75px;z-index: 4;">
 
+      
+      <!-- scene 2 elements -->
+      <img class="sprite texttop" src="sprites/scene_2/text_top.png" style="top: 10%; width: 70%; left: 50%; margin-left: -35%;">
+
+      <!-- book -->
+      <img class="sprite book" src="sprites/scene_2/book.png" style="width: 20%; top: 50%; left: 20%; ">
+
+      <!-- yun and icon -->
+      <img class="sprite yun" src="sprites/scene_2/yun.png" style="width: 50%; top: 22%; margin-right: -25%;">
+      <img class="sprite icon" src="sprites/scene_2/2.0.0.png" style="width: 50%; left: 50%; margin-left: -20%;">
 
       <!-- text -->
-      <img class="sprite baseline icon" src="h3c/sprites/scene_1/icon@20x90.png" style="left: 50%; margin-left: -20px; margin-top: 60px; z-index: 4;">
-      <img class="sprite baseline text" src="h3c/sprites/scene_1/text@36x150.png" style="left: 50%; margin-left: 10px; margin-top: 70px; z-index: 4;">
+      <img class="sprite textbottom" src="sprites/scene_2/text_bottom.png" style="top: 60%; width: 40%;">
+
+
+
+      <img class="sprite enveloparrow" src="sprites/arrow@50.png" style="left: 50%; width: 8%; margin-left: -4%; top: 20%; position: absolute;">
 
     </div>
-
 
 
 
 
     <!-- scene_2 -->
-    <div class="scene" id="scene_2" style="z-index: 998">
-
-      <img class="sprite curve" src="h3c/sprites/scene_2/curve_long.png" style="margin-left: 35px;">
-
-      <img class="element" src="h3c/sprites/scene_2/cloud@640x218.png" style="width: 100%; bottom: 0;">
-
-      <!-- mountain  -->
-      
-      <img class="element" src="h3c/sprites/scene_2/mountain@200x124.png" style="margin-left: -100px;">
-      <img class="element" src="h3c/sprites/scene_2/cloud@640x554.png" style="width: 100%">
-      
     
-      <img class="sprite baseline texttop" src="h3c/sprites/scene_2/text_top.png" style="margin-top: -20px; margin-left: -75px;">
-      <!-- book -->
-      <img class="sprite baseline book" src="h3c/sprites/scene_2/book@80x90.png">
-      <img class="sprite baseline textbook" src="h3c/sprites/scene_2/text_book.png" style="margin-top: 200px; margin-left: -5px;">
-
-      <!-- icon -->
-      <img class="sprite baseline icon" src="h3c/sprites/scene_2/icon.png" style="left: 50%; margin-left: -100px; margin-top: 130px;">
-
-      <!-- text -->
-      <img class="sprite baseline text" src="h3c/sprites/scene_2/text@200x60.png" style="left: 50%; margin-left: -100px; margin-top: 50px; ">
-      <img class="sprite baseline yun" src="h3c/sprites/scene_2/yun@80x86.png" style="left: 50%; margin-left: -6px; margin-top: 30px;">
-
-    </div>
 
 
 
 
     <!-- scene 3 -->
-    <div class="scene" id="scene_3" style="z-index: 99">
 
-      <img class="element" id="cloudbottom" src="h3c/sprites/scene_1/cloud@640x390.png" style="bottom: 0; width: 100%;">
+    <div class="scene hidden" id="scene_3" style="z-index: 997">
+
+      <!-- bg -->
+      <img class="element" src="sprites/bg_scene_4.jpg" style="width: 100%; height: 100%;">
+
+      <img class="sprite texttop" src="sprites/scene_3/text_top.png" style="width: 20%; left: 20%;">
+      <img class="sprite textmiddle" src="sprites/scene_3/text_middle.png" style="width: 40%; top: 40%;">
+      <img class="sprite after" src="sprites/scene_3/after.png" style="width: 40%; top: 50%; right: 10%;">
+
+      <!-- korea -->
+      <img class="sprite korea" src="sprites/scene_3/korea.png" style="width: 70%; height: 70%; top: 5%; left: 10%;">
+
+      <img class="sprite gs1" src="sprites/scene_3/gs1.png" style="width: 50%; top: 15%; left: 15%;">
+
+      <img class="sprite plane" src="sprites/scene_3/plane.png" style="width: 50%;">
+
+      <img class="sprite star" src="sprites/scene_3/star.png" style="width: 10%; left: 30%; top: 50%; margin-top: 7%;">
+      
+      <img class="sprite textbottom" src="sprites/scene_3/text_bottom.png" style="width: 80%; bottom: 13%;">
+    </div>
+
+
+
+
+    <!-- scene 4 -->
+
+    <div class="scene hidden" id="scene_4" style="z-index: 996">
+
+      <!-- bg -->
+      <img class="element" src="sprites/bg_scene_5.jpg" style="width: 100%; height: 100%;">
+
+      <img class="sprite mountain" src="sprites/scene_4/mountain.png" style="width: 100%;">
+      <img class="sprite textbottom1" src="sprites/scene_4/text_bottom1.png" style="width: 40%; left: 50%; margin-left: -20%;">
+      <img class="sprite textbottom2" src="sprites/scene_4/text_bottom2.png" style="bottom: 15%; width: 50%; left: 50%; margin-left: -25%;">
+
+
+      <!-- icons -->
+      <img class="sprite iconleft" src="sprites/scene_4/icon_left.png" style="width: 20%; left: 50%; margin-left: -26%;">
+      <img class="sprite iconmiddle" src="sprites/scene_4/icon_middle.png" style="width: 15%; left: 50%; margin-left: -2%;">
+      <img class="sprite iconright" src="sprites/scene_4/icon_right.png" style="width: 20%; left: 50%; margin-left: 19%;">
+      
+    </div>
+
+
+
+
+
+    <!-- scene 5 -->
+    <div class="scene hidden" id="scene_5" style="z-index: 995">
+
+      <!-- bg -->
+      <img class="element" src="sprites/bg_scene_6.jpg" style="width: 100%; height: 100%;">
+
+      <img class="sprite texttop" src="sprites/scene_5/text_top.png" style="width: 35%; top: 8%;">
+      <img class="sprite textmiddle" src="sprites/scene_5/text_middle.png" style="width: 30%; top: 30%;">
+      <img class="sprite textbottom" src="sprites/scene_5/text_bottom.png" style="width: 30%; top: 75%;">
+      
+
+      <img class="sprite circle" src="sprites/scene_5/circle.png" style="width: 30%; top: 30%; left: 10%;">
+      <img class="sprite h" src="sprites/scene_5/h.png" style="width: 10%;">
+      <img class="sprite k" src="sprites/scene_5/k.png" style="width: 10%;">
+      <img class="sprite g" src="sprites/scene_5/g.png" style="width: 20%;">
+
+
+
+      <img class="sprite rizhi" src="sprites/scene_5/rizhi.png" style="width: 20%; right: 20%; top: 66%;">
 
     </div>
 
 
 
-    <img class="arrow" src="h3c/sprites/arrow@24x24.png" style="left: 50%; margin-left: -12px; bottom: 0; opacity: 0; position: absolute; z-index: 1000;">
+
+
+
+    <!-- scene 6 -->
+    <div class="scene hidden" id="scene_6" style="z-index: 994">
+
+      <!-- bg -->
+      <img class="element" src="sprites/bg_scene_7.jpg" style="width: 100%; height: 100%;">
+
+      
+      <img class="sprite wenzi" src="sprites/scene_6/wenzi.png" style="width: 60%; margin-left: -30%; left: 50%;">
+
+      <img class="sprite shujian" src="sprites/scene_6/shujian.png" style="width: 60%; margin-left: -30%; top: 55%;">
+      <img class="sprite maobi" src="sprites/scene_6/maobi.png" style="width: 10%; top: 45%;">
+
+      <img class="sprite textbottom1" src="sprites/scene_6/text_bottom1.png" style="width: 80%; left: 50%; margin-left: -40%; bottom: 25%;">
+      <img class="sprite textbottom2" src="sprites/scene_6/text_bottom2.png" style="width: 80%; left: 50%; margin-left: -40%; bottom: 15%;">
+
+    </div>
+
+
+
+
+    <!-- scene 7 -->
+    <div class="scene hidden" id="scene_7" style="z-index: 993">
+
+      <!-- bg -->
+      <img class="element" src="sprites/bg_scene_8.jpg" style="width: 100%; height: 100%;">
+
+      <img class="sprite zhi" src="sprites/scene_7/zhi.png" style="width: 80%; top: 15%; height: 100%;">
+      
+      <img class="sprite texttop" src="sprites/scene_7/text_top.png" style="width: 80%; margin-left: -40%; top: 10%;">
+
+      
+      <img class="sprite xin" src="sprites/scene_7/text_xin.png" style="width: 10%; top: 32%;">
+
+      <img class="sprite circle1" src="sprites/scene_7/circle.png" style="width: 25%; top: 30%; left: 7%;">
+      <img class="sprite book1" src="sprites/scene_7/book1.png" style="width: 20%; top: 30%; left: 10%;">
+
+
+      <img class="sprite circle2" src="sprites/scene_7/circle.png" style="width: 30%; top: 60%; right: 13%;">
+      <img class="sprite book2" src="sprites/scene_7/book2.png" style="width: 25%; top: 60%; right: 15%;">
+
+      <img class="sprite textmiddle" src="sprites/scene_7/text_middle.png" style="width: 40%; top: 38%;">
+      <img class="sprite textbottom" src="sprites/scene_7/text_bottom.png" style="width: 40%; top: 68%;">
+
+    </div>
+
+
+    <!-- scene 8 -->
+    <div class="scene hidden" id="scene_8" style="z-index: 992">
+
+      <!-- bg -->
+      <img class="element" src="sprites/bg_scene_9.jpg" style="width: 100%; height: 100%;">
+
+
+      <img class="sprite genshu" src="sprites/scene_8/genshu.png" style="width: 40%; left: 50%; margin-left: -20%;">
+
+      <img class="sprite ios" src="sprites/scene_8/ios.png" style="width: 15%; left: 28%; margin-bottom: 32%;">
+      <img class="sprite android" src="sprites/scene_8/android.png" style="width: 15%; left: 57%; margin-bottom: 32%;">
+
+
+      <img class="sprite txt1" src="sprites/scene_8/txt1.png" style="width: 30%; top: 5%">
+      <img class="sprite txt2" src="sprites/scene_8/txt2.png" style="width: 70%; top: 10%;">
+
+      <img class="sprite txt3" src="sprites/scene_8/txt3.png" style="width: 25%; top: 20%;">
+      <img class="sprite txt4" src="sprites/scene_8/txt4.png" style="width: 70%; top: 25%;">
+      <img class="sprite txt5" src="sprites/scene_8/txt5.png" style="width: 50%; top: 33%; left: 5%;">
+
+    </div>
+
+
+    <img class="arrow" src="sprites/arrow@50.png" style="left: 50%; width: 6%; margin-left: -3%; bottom: 0; opacity: 0; position: absolute; z-index: 1000;">
 
     <!-- close of viewport -->
   </div>
