@@ -87,7 +87,7 @@ function swipeUp(event) {
   // open evelop
   if(m.splash) {
 
-    console.log('running splash');
+    // console.log('running splash');
     if (m.envelopArrowTween.isActive){
           m.envelopArrowTween.pause();
           $('.enveloparrow').hide();
@@ -114,7 +114,7 @@ function swipeUp(event) {
 
   
 
-  console.log('transit from ', m.currentScene, ' to ', m.currentScene + 1);
+  // console.log('transit from ', m.currentScene, ' to ', m.currentScene + 1);
 
   var scene = '#scene_' + (m.currentScene);
   var comingScene = '#scene_' + (m.currentScene + 1);
@@ -500,7 +500,7 @@ timelines.scene_4 = function(onStart, onComplete) {
   .fromTo('#scene_4 .iconleft', 1, {
     top: '0%'
   }, {
-    top: '7%',
+    top: '25%',
     autoAlpha: true,
     ease: Bounce.easeOut
   })
@@ -508,7 +508,7 @@ timelines.scene_4 = function(onStart, onComplete) {
   .fromTo('#scene_4 .iconright', 1, {
     top: '0%'
   }, {
-    top: '17%',
+    top: '25%',
     autoAlpha: true,
     ease: Bounce.easeOut
   }, "-=0.5")
@@ -516,7 +516,7 @@ timelines.scene_4 = function(onStart, onComplete) {
   .fromTo('#scene_4 .iconmiddle', 1, {
     top: '0%'
   }, {
-    top: '12%',
+    top: '25%',
     autoAlpha: true,
     ease: Bounce.easeOut
   }, "-=0.5")
