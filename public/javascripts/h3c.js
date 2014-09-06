@@ -93,11 +93,13 @@ function playScene(event, scene) {
         var url_android = "http://www.h3c.com.cn/pub/0_H3C_APP/Root_uncle_cloud_for_Android.apk";
 
         $('#scene_8 .ios').click(function(){
-          window.open(url_ios, '_blank');
+          window.location.href = url_ios;
+          // window.open(url_ios, '_blank');
         });
 
         $('#scene_8 .android').click(function(){
-          window.open(url_android, '_blank');
+          window.location.href = url_android;
+          // window.open(url_android, '_blank');
         });
 
       }
