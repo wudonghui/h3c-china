@@ -50,9 +50,9 @@
 
 
       <!-- icons -->
-      <img class="sprite iconleft" src="sprites/scene_4/icon_left.png" style="width: 20%; margin-top: -100px; left: 50%; margin-left: -26%;">
-      <img class="sprite iconmiddle" src="sprites/scene_4/icon_middle.png" style="width: 15%; margin-top: -70px; left: 50%; margin-left: -2%;">
-      <img class="sprite iconright" src="sprites/scene_4/icon_right.png" style="width: 20%; margin-top: -50px; left: 50%; margin-left: 19%;">
+      <img class="sprite iconleft" src="sprites/scene_4/icon_left.png" style="width: 20%; left: 50%; margin-left: -26%;">
+      <img class="sprite iconmiddle" src="sprites/scene_4/icon_middle.png" style="width: 15%; left: 50%; margin-left: -2%;">
+      <img class="sprite iconright" src="sprites/scene_4/icon_right.png" style="width: 20%; left: 50%; margin-left: 19%;">
 
     </div>
 
@@ -87,6 +87,13 @@
 
   // after page is fully loaded, include images, css, js files
   window.onload = function() {
+    // fix a few positions
+
+    $('#scene_4 .iconleft').css('margin-top', 0 - $('#scene_4 .iconleft').height());
+    $('#scene_4 .iconmiddle').css('margin-top', 0 - $('#scene_4 .iconmiddle').height());
+    $('#scene_4 .iconright').css('margin-top', 0 - $('#scene_4 .iconright').height()/2);
+
+
     var tl = timelines['scene_4'](
       // onStart callback
       function() {
