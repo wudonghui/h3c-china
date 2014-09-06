@@ -18,7 +18,8 @@ window.onload = function() {
   $('#scene_4 .iconright').css('margin-top', 0 - $('#scene_4 .iconright').height()/2);
 
   //scene 3
-  
+  $('#scene_3 .star').css('margin-top', $('#scene_3 .plane').height()*0.2);
+  $('#scene_3 .star').css('margin-left', $('#scene_3 .plane').width()*0.2);  
 
   //scene 8
   $('#scene_8 .ios').css('margin-bottom', $('#scene_8 .genshu').height()*0.52);

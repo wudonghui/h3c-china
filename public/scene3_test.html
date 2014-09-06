@@ -53,7 +53,7 @@
 
       <img class="sprite plane" src="sprites/scene_3/plane.png" style="width: 50%;">
 
-      <img class="sprite star" src="sprites/scene_3/star.png" style="width: 10%; left: 30%; top: 50%; margin-top: 7%;">
+      <img class="sprite star" src="sprites/scene_3/star.png" style="width: 10%; left: 20%; top: 50%;">
       
       <img class="sprite textbottom" src="sprites/scene_3/text_bottom.png" style="width: 80%; bottom: 13%;">
     </div>
@@ -92,9 +92,9 @@
   window.onload = function() {
     // fix a few positions
 
-    // $('#scene_8 .ios').css('margin-bottom', $('#scene_8 .genshu').height()*0.52);
-    // $('#scene_8 .android').css('margin-bottom', $('#scene_8 .genshu').height()*0.52);
-
+    $('#scene_3 .star').css('margin-top', $('#scene_3 .plane').height()*0.2);
+    $('#scene_3 .star').css('margin-left', $('#scene_3 .plane').width()*0.2);
+    
     var tl = timelines['scene_3'](
       // onStart callback
       function() {
