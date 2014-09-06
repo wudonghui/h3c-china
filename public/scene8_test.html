@@ -37,24 +37,28 @@
 
     <!-- stack of scenes -->
 
-    <!-- scene 4 -->
-
-    <div class="scene" id="scene_4" style="z-index: 996">
+    <!-- scene 8 -->
+    <div class="scene hidden" id="scene_8" style="z-index: 992">
 
       <!-- bg -->
-      <img class="element" src="sprites/bg_scene_5.jpg" style="width: 100%; height: 100%;">
-
-      <img class="sprite mountain" src="sprites/scene_4/mountain.png" style="width: 100%;">
-      <img class="sprite textbottom1" src="sprites/scene_4/text_bottom1.png" style="width: 40%; left: 50%; margin-left: -20%;">
-      <img class="sprite textbottom2" src="sprites/scene_4/text_bottom2.png" style="bottom: 15%; width: 50%; left: 50%; margin-left: -25%;">
+      <img class="element" src="sprites/bg_scene_9.jpg" style="width: 100%; height: 100%;">
 
 
-      <!-- icons -->
-      <img class="sprite iconleft" src="sprites/scene_4/icon_left.png" style="width: 20%; left: 50%; margin-left: -26%;">
-      <img class="sprite iconmiddle" src="sprites/scene_4/icon_middle.png" style="width: 15%; left: 50%; margin-left: -2%;">
-      <img class="sprite iconright" src="sprites/scene_4/icon_right.png" style="width: 20%; left: 50%; margin-left: 19%;">
+      <img class="sprite genshu" src="sprites/scene_8/genshu.png" style="width: 40%; left: 50%; margin-left: -20%;">
+
+      <img class="sprite ios" src="sprites/scene_8/ios.png" style="width: 15%; left: 28%; ">
+      <img class="sprite android" src="sprites/scene_8/android.png" style="width: 15%; left: 57%; ">
+
+
+      <img class="sprite txt1" src="sprites/scene_8/txt1.png" style="width: 30%; top: 5%">
+      <img class="sprite txt2" src="sprites/scene_8/txt2.png" style="width: 70%; top: 10%;">
+
+      <img class="sprite txt3" src="sprites/scene_8/txt3.png" style="width: 25%; top: 20%;">
+      <img class="sprite txt4" src="sprites/scene_8/txt4.png" style="width: 70%; top: 25%;">
+      <img class="sprite txt5" src="sprites/scene_8/txt5.png" style="width: 50%; top: 33%; left: 5%;">
 
     </div>
+
 
 
     <img class="arrow" src="sprites/arrow@50.png" style="left: 50%; width: 6%; margin-left: -3%; bottom: 0; opacity: 0; position: absolute; z-index: 1000;">
@@ -89,12 +93,10 @@
   window.onload = function() {
     // fix a few positions
 
-    $('#scene_4 .iconleft').css('margin-top', 0 - $('#scene_4 .iconleft').height()*0.9);
-    $('#scene_4 .iconmiddle').css('margin-top', 0 - $('#scene_4 .iconmiddle').height());
-    $('#scene_4 .iconright').css('margin-top', 0 - $('#scene_4 .iconright').height()/2);
+    $('#scene_8 .ios').css('margin-bottom', $('#scene_8 .genshu').height()*0.52);
+    $('#scene_8 .android').css('margin-bottom', $('#scene_8 .genshu').height()*0.52);
 
-
-    var tl = timelines['scene_4'](
+    var tl = timelines['scene_8'](
       // onStart callback
       function() {
         m.isAnimating = true;

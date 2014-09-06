@@ -8,6 +8,14 @@ $(document).ready(function() {
 
 // after page is fully loaded, include images, css, js files
 window.onload = function() {
+
+  // important position adjustment
+  // calculate the margin offset 
+  $('#scene_4 .iconleft').css('margin-top', 0 - $('#scene_4 .iconleft').height()*0.9);
+  $('#scene_4 .iconmiddle').css('margin-top', 0 - $('#scene_4 .iconmiddle').height());
+  $('#scene_4 .iconright').css('margin-top', 0 - $('#scene_4 .iconright').height()/2);
+
+
   // set all the scenes invisible
   $('.scene.hidden').css('visibility', 'hidden');
 
@@ -116,16 +124,35 @@ function swipeUp(event) {
   });
 
 
-  tl.to(scene, 1.25, {
+  
+  // positioning the coming scene to the bottom
+  $(comingScene).css('top', '100%')
+  $(comingScene).css('z-index', '998');
+  $(comingScene).css('visibility', 'visible');
+
+  var transitionDuration = 1.5;
+  var transitionDurationPosition = "-=1.5";
+
+  tl.to(scene, transitionDuration, {
       top: "-100%",
-      ease: Power1.easeOut,
-    }).set(comingScene, {
-      'visibility': 'visible'
-    }, "-=1.25")
-    .from(comingScene, 1.25, {
-      top: "100%",
-      ease: Power1.easeOut,
-    }, "-=1.25");
+      ease: Power2.easeInOut,
+    })
+  .to(comingScene, transitionDuration, {
+      top: "0%",
+      ease: Power2.easeInOut,
+  }, transitionDurationPosition);
+
+
+  // tl.to(scene, transitionDuration, {
+  //     top: "-100%",
+  //     ease: Power2.easeInOut,
+  //   }).set(comingScene, {
+  //     'visibility': 'visible'
+  //   }, transitionDurationPosition)
+  //   .from(comingScene, transitionDuration, {
+  //     top: "100%",
+  //     ease: Power2.easeInOut,
+  //   }, transitionDurationPosition);
 
   tl.play();
 
