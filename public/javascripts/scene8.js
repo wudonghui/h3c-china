@@ -65,6 +65,10 @@ timelines.scene_8 = function(onStart, onComplete) {
 
   .to('#scene_8 .txt5', 1, {
     autoAlpha: true
+  })
+
+  .to('#scene_8 .note', 1, {
+    autoAlpha: true
   });
 
 
