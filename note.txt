@@ -1,8 +1,31 @@
 bug fixings
 
+scene 3
+-----------
+enlarge the font size
+
 scene 4
 ----------
 三个图标落下来的位置
 
 
+scene 6
+----------
+文字颜色不对(设计就是这样的)
+字间距太大
+
+
+scene 7
+----------
+xin font size too small
+text bottom shift a little to right 
+
+
+scene 8
+------------
+add link
+
 1) 最后一页根叔和手上的云是一个图层
+
+https://itunes.apple.com/cn/app/gen-shu-de-yun-tu/id721591668?mt=8
+http://www.h3c.com.cn/pub/0_H3C_APP/Root_uncle_cloud_for_Android.apk

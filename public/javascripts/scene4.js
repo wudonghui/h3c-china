@@ -16,9 +16,9 @@ timelines.scene_4 = function(onStart, onComplete) {
   })
 
   .fromTo('#scene_4 .textbottom1', 1, {
-    bottom: '0%'
+    top: '100%'
   }, {
-    bottom: '20%',
+    top: '65%',
     autoAlpha: true,
   })
 

@@ -18,8 +18,8 @@ window.onload = function() {
   $('#scene_4 .iconright').css('margin-top', 0 - $('#scene_4 .iconright').height()/2);
 
   //scene 3
-  $('#scene_3 .star').css('margin-top', $('#scene_3 .plane').height()*0.2);
-  $('#scene_3 .star').css('margin-left', $('#scene_3 .plane').width()*0.2);  
+  $('#scene_3 .star').css('margin-top', $('#scene_3 .plane').height()*0.18);
+  $('#scene_3 .star').css('margin-left', $('#scene_3 .plane').width()*0.18);  
 
   //scene 8
   $('#scene_8 .ios').css('margin-bottom', $('#scene_8 .genshu').height()*0.52);
@@ -83,6 +83,27 @@ function playScene(event, scene) {
 
       if(m.currentScene < m.numberOfScenes)
         $('.arrow').show();
+
+
+      // last scene
+      // add download link
+      if(m.currentScene == m.numberOfScenes) {
+
+        var url_ios = "https://itunes.apple.com/cn/app/gen-shu-de-yun-tu/id721591668?mt=8";
+        var url_android = "http://www.h3c.com.cn/pub/0_H3C_APP/Root_uncle_cloud_for_Android.apk";
+
+        $('#scene_8 .ios').click(function(){
+          window.open(url_ios, '_blank');
+        });
+
+        $('#scene_8 .android').click(function(){
+          window.open(url_android, '_blank');
+        });
+
+      }
+
+
+
     }
   );
 

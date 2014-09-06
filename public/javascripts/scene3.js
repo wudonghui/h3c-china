@@ -13,14 +13,12 @@ timelines.scene_3 = function(onStart, onComplete) {
     }, {
       top: '10%',
       autoAlpha: true,
-      // ease: Bounce.easeOut,
     })
     .fromTo('#scene_3 .textmiddle', 1, {
       right: '0%'
     }, {
-      right: '20%',
+      right: '10%',
       autoAlpha: true,
-      // ease: Bounce.easeOut,
     }, "-=1")
 
     .to('#scene_3 .korea', 1, {

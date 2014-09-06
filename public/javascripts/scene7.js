@@ -24,7 +24,7 @@ timelines.scene_7 = function(onStart, onComplete) {
   .fromTo('#scene_7 .xin', 1, {
     left: "0%",
   }, {
-    left: "45%",
+    left: "35%",
     autoAlpha: true
   }, "-=0.5")
 
@@ -67,7 +67,7 @@ timelines.scene_7 = function(onStart, onComplete) {
   .fromTo('#scene_7 .textbottom', 1, {
     right: "0%",
   }, {
-    right: "50%",
+    right: "45%",
     autoAlpha: true
   })  
 

@@ -54,7 +54,7 @@ timelines.scene_5 = function(onStart, onComplete) {
   tl.fromTo('#scene_5 .textmiddle', 1, {
     right: "0%",
   }, {
-    right: "20%",
+    right: "15%",
     autoAlpha: true
   })
 

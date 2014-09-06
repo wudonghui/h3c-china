@@ -103,6 +103,18 @@
       },
       // onComplete callback
       function() {
+
+        var url_ios = "https://itunes.apple.com/cn/app/gen-shu-de-yun-tu/id721591668?mt=8";
+        var url_android = "http://www.h3c.com.cn/pub/0_H3C_APP/Root_uncle_cloud_for_Android.apk";
+
+        $('#scene_8 .ios').click(function(){
+          window.open(url_ios, '_blank');
+        });
+
+        $('#scene_8 .android').click(function(){
+          window.open(url_android, '_blank');
+        });
+
         m.isAnimating = false;
 
         (m.arrowTween.isActive == true) ? m.arrowTween.resume(): m.arrowTween.play();
