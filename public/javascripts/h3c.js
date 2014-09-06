@@ -11,9 +11,18 @@ window.onload = function() {
 
   // important position adjustment
   // calculate the margin offset 
+  
+  //scene 4
   $('#scene_4 .iconleft').css('margin-top', 0 - $('#scene_4 .iconleft').height()*0.9);
   $('#scene_4 .iconmiddle').css('margin-top', 0 - $('#scene_4 .iconmiddle').height());
   $('#scene_4 .iconright').css('margin-top', 0 - $('#scene_4 .iconright').height()/2);
+
+  //scene 3
+  
+
+  //scene 8
+  $('#scene_8 .ios').css('margin-bottom', $('#scene_8 .genshu').height()*0.52);
+  $('#scene_8 .android').css('margin-bottom', $('#scene_8 .genshu').height()*0.52);
 
 
   // set all the scenes invisible
