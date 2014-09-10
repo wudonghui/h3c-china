@@ -8,10 +8,14 @@ timelines.scene_4 = function(onStart, onComplete) {
     onComplete: onComplete
   });
 
-  tl.fromTo('#scene_4 .mountain', 1, {
-    top: '0%'
+  tl.fromTo('#scene_4 .mountain', 1.5, {
+    top: '0%',
+    scaleX: 0,
+    scaleY: 0,
   }, {
     top: '25%',
+    scaleX: 1,
+    scaleY: 1,
     autoAlpha: true,
   })
 
@@ -19,6 +23,7 @@ timelines.scene_4 = function(onStart, onComplete) {
     top: '100%'
   }, {
     top: '68%',
+    rotation: 720,
     autoAlpha: true,
   })
 
@@ -48,9 +53,9 @@ timelines.scene_4 = function(onStart, onComplete) {
 
 
   .to('#scene_4 .textbottom2', 1, {
+    rotation: 720,
     autoAlpha: true
-  })
-
+  }, "-=0.5")
  
   return tl;
 };

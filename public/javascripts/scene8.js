@@ -3,36 +3,39 @@
 
 timelines.scene_8 = function(onStart, onComplete) {
   var tl = new TimelineMax({
-    delay: 0.5,
     paused: true,
     onStart: onStart,
     onComplete: onComplete
   });
 
-  tl.fromTo('#scene_8 .genshu', 1.25, {
-    bottom: "100%",
+  tl.fromTo('#scene_8 .genshu', 1, {
+    bottom: "20%",
+    scaleX: 0,
+    scaleY: 0,
   }, {
     bottom: "10%",
-    ease: Bounce.easeOut,
+    scaleX: 1,
+    scaleY: 1,
+    ease: Power2.easeInOut,
     autoAlpha: true
   })
 
 
-  .fromTo('#scene_8 .ios', 1.25, {
-    bottom: "100%",
+  .fromTo('#scene_8 .ios', 1.5, {
+    rotationY: 90
   }, {
-    bottom: "10%",
-    ease: Bounce.easeOut,
+    rotationY: 1080,
+    ease: Power2.easeInOut,
     autoAlpha: true
   })
 
-  .fromTo('#scene_8 .android', 1.25, {
-    bottom: "100%",
+  .fromTo('#scene_8 .android', 1.5, {
+    rotationY: 90
   }, {
-    bottom: "10%",
-    ease: Bounce.easeOut,
+    rotationY: 1080,
+    ease: Power2.easeInOut,
     autoAlpha: true
-  }, "-=0.5")
+  }, "-=1")
 
 
   .fromTo('#scene_8 .txt1', 1, {

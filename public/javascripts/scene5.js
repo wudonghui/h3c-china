@@ -10,9 +10,9 @@ timelines.scene_5 = function(onStart, onComplete) {
   });
 
   tl.fromTo('#scene_5 .texttop', 1, {
-    right: "0%",
+    left: "100%",
   }, {
-    right: "40%",
+    left: "50%",
     autoAlpha: true
   })
 
@@ -29,6 +29,7 @@ timelines.scene_5 = function(onStart, onComplete) {
     top: "0%",
     left: "18%",
   }, {
+    rotation: 720,
     autoAlpha: true,
     top: "30%",
     left: "18%",
@@ -37,6 +38,7 @@ timelines.scene_5 = function(onStart, onComplete) {
     top: "30%",
     left: "120%"
   }, {
+    rotation: 720,
     autoAlpha: true,
     top: "30%",
     left: "25%",
@@ -45,6 +47,7 @@ timelines.scene_5 = function(onStart, onComplete) {
     top: "50%",
     left: "-20%",
   }, {
+    rotation: 720,
     autoAlpha: true,
     top: "37%",
     left: "7%",
@@ -54,7 +57,7 @@ timelines.scene_5 = function(onStart, onComplete) {
   tl.fromTo('#scene_5 .textmiddle', 1, {
     right: "0%",
   }, {
-    right: "15%",
+    right: "10%",
     autoAlpha: true
   })
 
@@ -71,7 +74,7 @@ timelines.scene_5 = function(onStart, onComplete) {
   tl.fromTo('#scene_5 .textbottom', 1, {
     left: "0%",
   }, {
-    left: "30%",
+    left: "20%",
     autoAlpha: true
   }, "-=0.5")
 

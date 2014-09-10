@@ -10,12 +10,18 @@ timelines.scene_7 = function(onStart, onComplete) {
     onComplete: onComplete
   });
 
-  tl.fromTo('#scene_7 .texttop', 1, {
-    left: "0%",
+  tl.fromTo('#scene_7 .texttop1', 1, {
+    left: "100%",
   }, {
     left: "50%",
     autoAlpha: true
   })
+  .fromTo('#scene_7 .texttop2', 1, {
+    left: "0%",
+  }, {
+    left: "50%",
+    autoAlpha: true
+  }, "-=1")
 
   .to('#scene_7 .zhi', 1, {
     autoAlpha: true
@@ -36,6 +42,7 @@ timelines.scene_7 = function(onStart, onComplete) {
     scaleX: 0,
     scaleY: 0,
   }, {
+    rotation: 360,
     autoAlpha: true,
     scaleX: 1,
     scaleY: 1,
@@ -45,7 +52,7 @@ timelines.scene_7 = function(onStart, onComplete) {
   .fromTo('#scene_7 .textmiddle', 1, {
     right: "0%",
   }, {
-    right: "20%",
+    right: "12%",
     autoAlpha: true
   })
 
@@ -58,19 +65,18 @@ timelines.scene_7 = function(onStart, onComplete) {
     scaleX: 0,
     scaleY: 0,
   }, {
+    rotation: 360,
     autoAlpha: true,
     scaleX: 1,
     scaleY: 1,
-    // ease: Bounce.easeOut
   }, "-=0.5")
 
   .fromTo('#scene_7 .textbottom', 1, {
     right: "0%",
   }, {
-    right: "45%",
+    right: "50%",
     autoAlpha: true
   })  
-
 
   return tl;
 };

@@ -12,16 +12,28 @@ timelines.scene_6 = function(onStart, onComplete) {
   tl.fromTo('#scene_6 .maobi', 1, {
     right: "0%",
   }, {
-    right: "25%",
+    right: "23%",
     autoAlpha: true
   })
 
-  .fromTo('#scene_6 .shujian', 1, {
-    left: "0%",
+
+  .fromTo('#scene_6 .shujian', 1.5, {
+    top: "40%",
+    scaleX: 0,
+    scaleY: 0,
   }, {
-    left: "50%",
+    top: "55%",
+    scaleX: 1,
+    scaleY: 1,
     autoAlpha: true
   }, '-=1.5')
+
+  .fromTo('#scene_6 .maobi', 1, {
+    top: "42%",
+  }, {
+    top: "48%",
+  })
+
 
   .fromTo('#scene_6 .wenzi', 2, {
     bottom: "45%"

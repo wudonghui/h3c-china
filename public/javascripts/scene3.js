@@ -17,7 +17,7 @@ timelines.scene_3 = function(onStart, onComplete) {
     .fromTo('#scene_3 .textmiddle', 1, {
       right: '0%'
     }, {
-      right: '10%',
+      right: '3%',
       autoAlpha: true,
     }, "-=1")
 
@@ -32,7 +32,7 @@ timelines.scene_3 = function(onStart, onComplete) {
     autoAlpha: true,
     scaleX: 1,
     scaleY: 1,
-    ease: Bounce.easeOut
+    ease: Power2.easeInOut
   }, "-=0.5")
 
   .fromTo('#scene_3 .plane', 3, {
@@ -46,7 +46,7 @@ timelines.scene_3 = function(onStart, onComplete) {
 
   .to('#scene_3 .plane', 3, {
     bezier: {
-      // curviness: 1.25,
+      curviness: 1.25,
       values: [{
         left: "10%",
         top: "0%"
@@ -81,7 +81,8 @@ timelines.scene_3 = function(onStart, onComplete) {
     autoAlpha: true,
     scaleX: 1,
     scaleY: 1,
-    ease: Bounce.easeOut
+    ease: Power2.easeInOut
+    // ease: Bounce.easeOut
   }, "-=1")
 
   .to('#scene_3 .textbottom', 1, {

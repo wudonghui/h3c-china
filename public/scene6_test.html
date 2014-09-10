@@ -37,24 +37,22 @@
 
     <!-- stack of scenes -->
 
-    <!-- scene 4 -->
-
-    <div class="scene" id="scene_4" style="z-index: 996">
+    <div class="scene hidden" id="scene_6" style="z-index: 994">
 
       <!-- bg -->
-      <img class="element" src="sprites/bg_scene_5.jpg" style="width: 100%; height: 100%;">
+      <img class="element" src="sprites/bg_scene_7.jpg" style="width: 100%; height: 100%;">
 
-      <img class="sprite mountain" src="sprites/scene_4/mountain.png" style="width: 100%;">
-      <img class="sprite textbottom1" src="sprites/scene_4/text_bottom1.png" style="width: 60%; left: 50%; margin-left: -30%;">
-      <img class="sprite textbottom2" src="sprites/scene_4/text_bottom2.png" style="top: 75%; width: 70%; left: 50%; margin-left: -35%;">
+      
+      <img class="sprite wenzi" src="sprites/scene_6/wenzi.png" style="width: 60%; margin-left: -30%; left: 50%;">
 
+      <img class="sprite shujian" src="sprites/scene_6/shujian.png" style="width: 60%; left: 50%; margin-left: -30%; top: 55%;">
+      <img class="sprite maobi" src="sprites/scene_6/maobi.png" style="width: 10%; top: 42%;">
 
-      <!-- icons -->
-      <img class="sprite iconleft" src="sprites/scene_4/icon_left_big.png" style="width: 25%; left: 50%; margin-left: -29%;">
-      <img class="sprite iconmiddle" src="sprites/scene_4/icon_middle_big.png" style="width: 20%; left: 50%; margin-left: -4%;">
-      <img class="sprite iconright" src="sprites/scene_4/icon_right_big.png" style="width: 25%; left: 50%; margin-left: 17%;">
+      <img class="sprite textbottom1" src="sprites/scene_6/text_bottom1_big.png" style="width: 80%; left: 50%; margin-left: -40%; top: 68%;">
+      <img class="sprite textbottom2" src="sprites/scene_6/text_bottom2_big.png" style="width: 80%; left: 50%; margin-left: -40%; top: 82%;">
 
     </div>
+
 
 
     <img class="arrow" src="sprites/arrow@50.png" style="left: 50%; width: 6%; margin-left: -3%; bottom: 0; opacity: 0; position: absolute; z-index: 1000;">
@@ -89,12 +87,12 @@
   window.onload = function() {
     // fix a few positions
 
-    $('#scene_4 .iconleft').css('margin-top', 0 - $('#scene_4 .iconleft').height()*0.9);
-    $('#scene_4 .iconmiddle').css('margin-top', 0 - $('#scene_4 .iconmiddle').height());
-    $('#scene_4 .iconright').css('margin-top', 0 - $('#scene_4 .iconright').height()/2);
+    // $('#scene_4 .iconleft').css('margin-top', 0 - $('#scene_4 .iconleft').height()*0.9);
+    // $('#scene_4 .iconmiddle').css('margin-top', 0 - $('#scene_4 .iconmiddle').height());
+    // $('#scene_4 .iconright').css('margin-top', 0 - $('#scene_4 .iconright').height()/2);
 
 
-    var tl = timelines['scene_4'](
+    var tl = timelines['scene_6'](
       // onStart callback
       function() {
         m.isAnimating = true;

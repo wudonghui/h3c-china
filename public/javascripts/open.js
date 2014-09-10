@@ -62,14 +62,22 @@ timelines.open = function(onStart, onComplete) {
 
     .set('#scene_2 .letter', {zIndex: 0})
 
+
+
     // scene 2 animation  
-    .fromTo('#scene_2 .texttop', 1, {
-      left: '100%'
-    }, {
-      left: '50%',
-      autoAlpha: true,
-      // ease: Bounce.easeOut,
-    })
+    .fromTo('#scene_2 .txt1', 1, {
+        left: '0%'
+      }, {
+        left: '50%',
+        autoAlpha: true,
+      })
+    .fromTo('#scene_2 .txt2', 1, {
+        left: '100%'
+      }, {
+        left: '50%',
+        autoAlpha: true,
+      }, "-=1")
+    
 
     .fromTo('#scene_2 .yun', 1, {
       right: '100%'
@@ -87,13 +95,14 @@ timelines.open = function(onStart, onComplete) {
       ease: Bounce.easeOut,
     }, "-=0.5")
 
-    .fromTo('#scene_2 .book', 1, {
+    .fromTo('#scene_2 .book', 1.5, {
       scaleX: 0,
       scaleY: 0
     }, {
-      autoAlpha: true,
+      rotation: 720,
       scaleX: 1,
       scaleY: 1,
+      autoAlpha: true,
       // ease: Bounce.easeOut
     })
 
