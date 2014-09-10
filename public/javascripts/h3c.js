@@ -134,6 +134,13 @@ function swipeUp(event) {
     return false;
   }
 
+  // kill any repeat tween if exist
+  if(m.repeatTween) {
+    console.log('killed repeat tween');
+    m.repeatTween.kill();
+    m.repeatTween = null;
+  }
+
 
   // console.log('transit from ', m.currentScene, ' to ', m.currentScene + 1);
 
@@ -175,17 +182,6 @@ function swipeUp(event) {
       ease: Power2.easeInOut,
   }, transitionDurationPosition);
 
-
-  // tl.to(scene, transitionDuration, {
-  //     top: "-100%",
-  //     ease: Power2.easeInOut,
-  //   }).set(comingScene, {
-  //     'visibility': 'visible'
-  //   }, transitionDurationPosition)
-  //   .from(comingScene, transitionDuration, {
-  //     top: "100%",
-  //     ease: Power2.easeInOut,
-  //   }, transitionDurationPosition);
 
   tl.play();
 
@@ -235,60 +231,5 @@ timelines.scene_2 = function(onStart, onComplete) {
 
   return tl;
 };
-
-
-// scene_2
-// timelines.scene_2 = function(onStart, onComplete) {
-//   var tl = new TimelineMax({
-//     delay: 0.5,
-//     paused: true,
-//     onStart: onStart,
-//     onComplete: onComplete
-//   });
-
-//   tl.fromTo('#scene_2 .texttop', 1, {
-//     left: '100%'
-//   }, {
-//     left: '50%',
-//     autoAlpha: true,
-//     // ease: Bounce.easeOut,
-//   })
-
-//   .fromTo('#scene_2 .yun', 1, {
-//     right: '100%'
-//   }, {
-//     right: '50%',
-//     autoAlpha: true,
-//     // ease: Bounce.easeOut,
-//   }, "-=0.5")
-
-//   .fromTo('#scene_2 .icon', 1, {
-//     top: '0%',
-//   }, {
-//     top: '40%',
-//     autoAlpha: true,
-//     ease: Bounce.easeOut,
-//   }, "-=0.5")
-
-//   .fromTo('#scene_2 .book', 1, {
-//     scaleX: 0,
-//     scaleY: 0
-//   }, {
-//     autoAlpha: true,
-//     scaleX: 1,
-//     scaleY: 1,
-//     // ease: Bounce.easeOut
-//   })
-
-//   .fromTo('#scene_2 .textbottom', 1, {
-//     right: '0%',
-//   }, {
-//     right: '15%',
-//     autoAlpha: true,
-//     // ease: Bounce.easeOut,
-//   }, "-=0.5");
-
-//   return tl;
-// };
 
 

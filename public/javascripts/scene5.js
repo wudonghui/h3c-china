@@ -6,7 +6,25 @@ timelines.scene_5 = function(onStart, onComplete) {
     delay: 0.5,
     paused: true,
     onStart: onStart,
-    onComplete: onComplete
+    onComplete: function(){
+      onComplete();
+
+      var rpt = new TimelineMax({paused: true});
+
+      rpt.to('#scene_5 .circle', 1, {
+        scaleX: 0.8,
+        scaleY: 0.8,
+        autoAlpha: true,
+        repeat: -1,
+        yoyo: true,
+        autoAlpha: 0
+      });
+
+      rpt.play();
+
+      m.repeatTween = rpt;
+
+    }
   });
 
   tl.fromTo('#scene_5 .texttop', 1, {
@@ -20,7 +38,7 @@ timelines.scene_5 = function(onStart, onComplete) {
     scaleX: 0,
     scaleY: 0,
   }, {
-    autoAlpha: true,
+    autoAlpha: 1,
     scaleX: 1,
     scaleY: 1,
   })
@@ -30,7 +48,7 @@ timelines.scene_5 = function(onStart, onComplete) {
     left: "18%",
   }, {
     rotation: 720,
-    autoAlpha: true,
+    autoAlpha: 1,
     top: "30%",
     left: "18%",
   }, "-=1")
@@ -48,7 +66,7 @@ timelines.scene_5 = function(onStart, onComplete) {
     left: "-20%",
   }, {
     rotation: 720,
-    autoAlpha: true,
+    autoAlpha: 1,
     top: "37%",
     left: "7%",
   }, "-=1")
@@ -65,7 +83,7 @@ timelines.scene_5 = function(onStart, onComplete) {
     scaleX: 0,
     scaleY: 0,
   }, {
-    autoAlpha: true,
+    autoAlpha: 1,
     scaleX: 1,
     scaleY: 1,
     ease: Bounce.easeOut

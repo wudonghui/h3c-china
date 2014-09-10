@@ -12,6 +12,27 @@ timelines.open = function(onStart, onComplete) {
         else
           m.arrowTween.play();
         $('.arrow').show();
+
+
+        var rpt = new TimelineMax({paused: true});
+
+        rpt.set('#scene_2', {perspective: 800});
+        rpt.set('#scene_2 .icon', {transformOrigin:"50% 50% -200"});
+        rpt.fromTo('#scene_2 .icon', 3, {
+          
+        },{
+          rotationY: 360,
+          autoAlpha: true,
+          repeatDelay: 2,
+          repeat: -1,
+          ease: Power2.easeInOut
+        });
+
+        rpt.play();
+
+        m.repeatTween = rpt;
+
+
       }
   });
 

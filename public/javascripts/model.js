@@ -11,6 +11,8 @@ var m = {
   envelopArrowTween:null,
   currentTimeline: null,
 
+  repeatTween: null,
+
   splash: true // is on splash page
 };
 

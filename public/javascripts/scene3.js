@@ -5,7 +5,28 @@ timelines.scene_3 = function(onStart, onComplete) {
     delay: 0.5,
     paused: true,
     onStart: onStart,
-    onComplete: onComplete
+    onComplete: function(){
+      onComplete();
+
+      var rpt = new TimelineMax({paused: true});
+
+      rpt.fromTo('#scene_3 .star', 1.5, {
+        scaleX: 0,
+        scaleY: 0,
+      },{
+        rotation: 720,
+        scaleX: 1,
+        scaleY: 1,
+        autoAlpha: true,
+        repeatDelay: 2,
+        repeat: -1,
+      });
+
+      rpt.play();
+
+      m.repeatTween = rpt;
+
+    }
   });
 
   tl.fromTo('#scene_3 .texttop', 1, {
@@ -88,13 +109,6 @@ timelines.scene_3 = function(onStart, onComplete) {
   .to('#scene_3 .textbottom', 1, {
     autoAlpha: true
   })
-
-  // .to('#scene_3 .star', 1, {
-  //   rotation: 180,
-  //   autoAlpha: true,
-  //   repeat: -1,
-  //   yoyo: true
-  // });
 
 
   return tl;
