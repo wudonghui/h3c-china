@@ -2,7 +2,6 @@
 // scene_4
 timelines.scene_4 = function(onStart, onComplete) {
   var tl = new TimelineMax({
-    delay: 0.5,
     paused: true,
     onStart: onStart,
     onComplete: onComplete
@@ -16,6 +15,7 @@ timelines.scene_4 = function(onStart, onComplete) {
     top: '25%',
     scaleX: 1,
     scaleY: 1,
+    ease: Power2.easeInOut,
     autoAlpha: true,
   })
 
