@@ -89,6 +89,13 @@ timelines.scene_3 = function(onStart, onComplete) {
     autoAlpha: true
   })
 
+  // .to('#scene_3 .star', 1, {
+  //   rotation: 180,
+  //   autoAlpha: true,
+  //   repeat: -1,
+  //   yoyo: true
+  // });
+
 
   return tl;
 };

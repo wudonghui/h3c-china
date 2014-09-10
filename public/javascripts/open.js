@@ -109,7 +109,7 @@ timelines.open = function(onStart, onComplete) {
     .fromTo('#scene_2 .textbottom', 1, {
       right: '0%',
     }, {
-      right: '15%',
+      right: '20%',
       autoAlpha: true,
       // ease: Bounce.easeOut,
     }, "-=0.5");

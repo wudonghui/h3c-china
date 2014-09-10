@@ -8,8 +8,8 @@ timelines.scene_8 = function(onStart, onComplete) {
     onComplete: onComplete
   });
 
-  tl.fromTo('#scene_8 .genshu', 1, {
-    bottom: "20%",
+  tl.fromTo('#scene_8 .genshu', 1.2, {
+    bottom: "15%",
     scaleX: 0,
     scaleY: 0,
   }, {
