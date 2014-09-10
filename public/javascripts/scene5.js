@@ -14,7 +14,6 @@ timelines.scene_5 = function(onStart, onComplete) {
       rpt.to('#scene_5 .circle', 1, {
         scaleX: 0.8,
         scaleY: 0.8,
-        autoAlpha: true,
         repeat: -1,
         yoyo: true,
         autoAlpha: 0

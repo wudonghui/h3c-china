@@ -6,7 +6,23 @@ timelines.scene_6 = function(onStart, onComplete) {
     delay: 0.5,
     paused: true,
     onStart: onStart,
-    onComplete: onComplete
+    onComplete: function(){
+      onComplete();
+
+      var rpt = new TimelineMax({paused: true});
+
+      rpt.to('#scene_6 .maobi', 1, {
+        top: "42%",
+        repeat: -1,
+        yoyo: true,
+        repeatDelay: 0.3
+      });
+
+      rpt.play();
+
+      m.repeatTween = rpt;
+
+    }
   });
 
   tl.fromTo('#scene_6 .maobi', 1, {

@@ -14,18 +14,37 @@ timelines.open = function(onStart, onComplete) {
         $('.arrow').show();
 
 
-        var rpt = new TimelineMax({paused: true});
+        // var rpt = new TimelineMax({paused: true});
 
-        rpt.set('#scene_2', {perspective: 800});
-        rpt.set('#scene_2 .icon', {transformOrigin:"50% 50% -200"});
-        rpt.fromTo('#scene_2 .icon', 3, {
+        // rpt.set('#scene_2', {perspective: 600});
+        // rpt.set('#scene_2 .icon', {transformOrigin:"50% 50% -150"});
+        // rpt.fromTo('#scene_2 .icon', 3, {
           
-        },{
-          rotationY: 360,
-          autoAlpha: true,
-          repeatDelay: 2,
-          repeat: -1,
-          ease: Power2.easeInOut
+        // },{
+        //   rotationY: 360,
+        //   autoAlpha: true,
+        //   repeatDelay: 2,
+        //   repeat: -1,
+        //   ease: Power2.easeInOut
+        // });
+
+        // rpt.play();
+
+        // m.repeatTween = rpt;
+
+
+        var rpt = new TimelineMax({paused: true, repeat: -1, repeatDelay: 2});
+
+        rpt.to('#scene_2 .icon', 0.1, {
+          rotation: -20,
+        }).to('#scene_2 .icon', 0.1, {
+          rotation: 20,
+        }).to('#scene_2 .icon', 0.1, {
+          rotation: -10,
+        }).to('#scene_2 .icon', 0.1, {
+          rotation: 20,
+        }).to('#scene_2 .icon', 0.1, {
+          rotation: 0,
         });
 
         rpt.play();
