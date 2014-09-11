@@ -3,7 +3,7 @@
 
 timelines.scene_5 = function(onStart, onComplete) {
   var tl = new TimelineMax({
-    delay: 0.5,
+    // delay: 0.5,
     paused: true,
     onStart: onStart,
     onComplete: function(){

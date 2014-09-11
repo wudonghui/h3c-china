@@ -160,6 +160,15 @@ function swipeUp(event) {
       m.isTransition = false;
       $('#scene_' + (m.currentScene - 1)).css('visibility', 'hidden');
       $('#viewport').trigger('playScene', 'scene_' + m.currentScene);
+
+      // release images
+      var images = $('#scene_' + (m.currentScene - 1) + ' img');
+      for(var i = 0; i < images.length; i++ ){
+        var img = images[i];
+        img.parentNode.removeChild(img);
+        img.src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+      }
+
     }
   });
 

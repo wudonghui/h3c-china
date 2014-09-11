@@ -24,8 +24,8 @@ m.arrowTween = new TimelineMax({
 });
 
 m.arrowTween.to('.arrow', 1, {
-  bottom: "15px",
-  opacity: 1,
+  bottom: "7%",
+  autoAlpha: 1,
   repeat: -1,
   yoyo: true
 });
