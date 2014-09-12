@@ -95,9 +95,13 @@ timelines.open = function(onStart, onComplete) {
       top: '0%',
       left: '0%',
       marginLeft: '0',
+      ease: Power2.easeInOut
     })
 
-    .to(['#scene_2 .envelop', '#scene_2 .envelop_white', '#scene_2 .cover'], 1, {top: '120%'}, "-=2")
+    // .set(['#scene_2 .envelop_white', '#scene_2 .coverfront', '#scene_2 .coverback'], {'visibility': 'hidden'})
+
+    .to(['#scene_2 .envelop', '#scene_2 .envelop_white', '#scene_2 .cover'], 1, 
+      {top: '120%'}, "-=1.5")
     .set(['#scene_2 .envelop', '#scene_2 .envelop_white', '#scene_2 .cover'], {'visibility': 'hidden'})
 
     .set('#scene_2 .letter', {zIndex: 0})
