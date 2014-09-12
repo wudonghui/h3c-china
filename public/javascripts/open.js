@@ -139,7 +139,16 @@ timelines.open = function(onStart, onComplete) {
       ease: Bounce.easeOut,
     }, "-=0.5")
 
-    .fromTo('#scene_2 .book', 1.5, {
+    // .fromTo('#scene_2 .circle', 1, {
+    //   scaleX: 0,
+    //   scaleY: 0
+    // }, {
+    //   scaleX: 1,
+    //   scaleY: 1,
+    //   autoAlpha: true,
+    // })
+
+    .fromTo('#scene_2 .book', 1, {
       scaleX: 0,
       scaleY: 0
     }, {
@@ -147,8 +156,9 @@ timelines.open = function(onStart, onComplete) {
       scaleX: 1,
       scaleY: 1,
       autoAlpha: true,
-      // ease: Bounce.easeOut
+      ease: Power2.easeInOut
     })
+
 
     .fromTo('#scene_2 .textbottom', 1, {
       right: '0%',
