@@ -49,6 +49,8 @@ function openEnvelop(){
           $('.enveloparrow').hide();
     }
 
+    $('#scene_2 .hint').hide();
+
     var tl = timelines['open'](
     // on start
     function() {
@@ -212,14 +214,19 @@ timelines.scene_2 = function(onStart, onComplete) {
       // play the envelop arrow
       var tlm = new TimelineMax({
         paused: true,
+        repeat: -1,
+        yoyo: true
       });
 
       tlm.to('.enveloparrow', 1, {
         top: "19%",
-        autoAlpha: true,
-        repeat: -1,
-        yoyo: true
+        autoAlpha: 1,
+        
       });
+
+      tlm.to('#scene_2 div.hint', 1, {
+        opacity: 0.3,
+      }, "-=1");
 
       m.envelopArrowTween = tlm;
 
@@ -228,7 +235,7 @@ timelines.scene_2 = function(onStart, onComplete) {
 
       // register swipe event
       $$('#viewport').swipeUp(swipeUp);
-      $('#scene_2 .cover').click(openEnvelop);
+      $$('#scene_2 .enveloparrow').tap(openEnvelop);
     }
   });
 

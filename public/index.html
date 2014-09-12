@@ -12,7 +12,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #ebc88c;
+    background: #4a7a7f;
   }
   /*all sprites, elements should be position as absolute*/
   .scene .sprite,
@@ -37,7 +37,7 @@
     font-size: 10px;
   }
 
-  .spinner > div {
+  .spinner > div.bar {
     background-color: #fff;
     height: 100%;
     width: 6px;
@@ -99,11 +99,12 @@
       <img class="element" src="sprites/bg_scene_1_and_2.jpg" style="width: 100%; height: 100%;">
 
       <div class="spinner">
-        <div class="rect1"></div>
-        <div class="rect2"></div>
-        <div class="rect3"></div>
-        <div class="rect4"></div>
-        <div class="rect5"></div>
+        <div class="bar rect1"></div>
+        <div class="bar rect2"></div>
+        <div class="bar rect3"></div>
+        <div class="bar rect4"></div>
+        <div class="bar rect5"></div>
+        <div style="text-align: center; color: white; font-weight: bold;">加载中...</div>
       </div>
 
 
@@ -140,7 +141,10 @@
       <img class="sprite textbottom" src="sprites/scene_2/text_bottom_big.png" style="top: 55%; width: 30%;">
 
 
-      <img class="sprite enveloparrow" src="sprites/arrow@50.png" style="left: 50%; width: 8%; margin-left: -4%; top: 20%; position: absolute;">
+      <div class="sprite hint" style="top: 27%; position: absolute; text-align: center;width: 100%; color: white;">
+        请点击箭头打开信封
+      </div>
+      <img class="sprite enveloparrow" src="sprites/arrow@50.png" style="left: 50%; width: 14%; margin-left: -7%; top: 20%; position: absolute;">
 
 
     </div>
@@ -325,7 +329,21 @@
 
 
 
-  <script src="prod.min.js"></script>
+
+  <script src="javascripts/jquery-1.9.1.min.js"></script>
+  <script src="javascripts/TweenMax.min.js" /></script>
+  <script src="javascripts/quo.js"></script>
+  <script src="javascripts/nobounce.js"></script>
+  <script src="javascripts/model.js"></script>
+  <script src="javascripts/open.js"></script>
+  <script src="javascripts/scene3.js"></script>
+  <script src="javascripts/scene4.js"></script>
+  <script src="javascripts/scene5.js"></script>
+  <script src="javascripts/scene6.js"></script>
+  <script src="javascripts/scene7.js"></script>
+  <script src="javascripts/scene8.js"></script>
+  <script src="javascripts/h3c.js"></script>
+  
 
 
 </body>
