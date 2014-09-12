@@ -35,7 +35,7 @@ window.onload = function() {
 
   // register swipe event
   $$('#viewport').swipeUp(swipeUp);
-  // $$('#viewport').swipeUp(openEnvelop);
+  $('#scene_2 .cover').click(openEnvelop);
 
   // register playScene event
   $('#viewport').on('playScene', playScene);
@@ -134,7 +134,7 @@ function swipeUp(event) {
   
   // open evelop
   if(m.splash) {
-    openEnvelop();
+    // openEnvelop();
     return false;
   }
 
