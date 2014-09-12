@@ -47,22 +47,22 @@
     animation: stretchdelay 1.2s infinite ease-in-out;
   }
 
-  .spinner .rect2 {
+  .spinner .rect2.bar {
     -webkit-animation-delay: -1.1s;
     animation-delay: -1.1s;
   }
 
-  .spinner .rect3 {
+  .spinner .rect3.bar {
     -webkit-animation-delay: -1.0s;
     animation-delay: -1.0s;
   }
 
-  .spinner .rect4 {
+  .spinner .rect4.bar {
     -webkit-animation-delay: -0.9s;
     animation-delay: -0.9s;
   }
 
-  .spinner .rect5 {
+  .spinner .rect5.bar {
     -webkit-animation-delay: -0.8s;
     animation-delay: -0.8s;
   }
@@ -99,13 +99,14 @@
       <img class="element" src="sprites/bg_scene_1_and_2.jpg" style="width: 100%; height: 100%;">
 
       <div class="spinner">
-        <div class="bar rect1"></div>
-        <div class="bar rect2"></div>
-        <div class="bar rect3"></div>
-        <div class="bar rect4"></div>
-        <div class="bar rect5"></div>
+        <div class="rect1 bar"></div>
+        <div class="rect2 bar"></div>
+        <div class="rect3 bar"></div>
+        <div class="rect4 bar"></div>
+        <div class="rect5 bar"></div>
         <div style="text-align: center; color: white; font-weight: bold;">加载中...</div>
       </div>
+      
 
 
       <!-- animation sprites -->
@@ -141,7 +142,7 @@
       <img class="sprite textbottom" src="sprites/scene_2/text_bottom_big.png" style="top: 55%; width: 30%;">
 
 
-      <div class="sprite hint" style="top: 27%; position: absolute; text-align: center;width: 100%; color: white;">
+      <div class="sprite hint" style="top: 28%; position: absolute; text-align: center;width: 100%; color: white;">
         请点击箭头打开信封
       </div>
       <img class="sprite enveloparrow" src="sprites/arrow@50.png" style="left: 50%; width: 14%; margin-left: -7%; top: 20%; position: absolute;">
@@ -329,21 +330,8 @@
 
 
 
+  <script src="prod.min.js"></script>
 
-  <script src="javascripts/jquery-1.9.1.min.js"></script>
-  <script src="javascripts/TweenMax.min.js" /></script>
-  <script src="javascripts/quo.js"></script>
-  <script src="javascripts/nobounce.js"></script>
-  <script src="javascripts/model.js"></script>
-  <script src="javascripts/open.js"></script>
-  <script src="javascripts/scene3.js"></script>
-  <script src="javascripts/scene4.js"></script>
-  <script src="javascripts/scene5.js"></script>
-  <script src="javascripts/scene6.js"></script>
-  <script src="javascripts/scene7.js"></script>
-  <script src="javascripts/scene8.js"></script>
-  <script src="javascripts/h3c.js"></script>
-  
 
 
 </body>
