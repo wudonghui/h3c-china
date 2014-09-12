@@ -21,7 +21,6 @@ timelines.scene_6 = function(onStart, onComplete) {
       rpt.play();
 
       m.repeatTween = rpt;
-
     }
   });
 

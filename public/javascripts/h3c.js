@@ -29,6 +29,10 @@ window.onload = function() {
   // set all the scenes invisible
   $('.scene.hidden').css('visibility', 'hidden');
 
+  // hide the spinner
+  $('#scene_2 .spinner').remove();
+
+
   // register swipe event
   $$('#viewport').swipeUp(swipeUp);
   // $$('#viewport').swipeUp(openEnvelop);
@@ -136,7 +140,7 @@ function swipeUp(event) {
 
   // kill any repeat tween if exist
   if(m.repeatTween) {
-    console.log('killed repeat tween');
+    // console.log('killed repeat tween');
     m.repeatTween.kill();
     m.repeatTween = null;
   }

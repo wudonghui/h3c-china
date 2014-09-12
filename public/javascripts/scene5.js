@@ -19,6 +19,21 @@ timelines.scene_5 = function(onStart, onComplete) {
         autoAlpha: 0
       });
 
+
+      // var rpt = new TimelineMax({paused: true, repeat: -1, yoyo: true, repeatDelay: 2});
+
+      // rpt.to('#scene_5 .circle', 1, {
+      //   scaleX: 0.8,
+      //   scaleY: 0.8,
+      //   autoAlpha: 0
+      // });
+
+      // rpt.to('#scene_5 .h', 1, {
+      //   rotation: 720,
+      //   top: "10%",
+      //   left: "50%",
+      // }, "-=1");
+
       rpt.play();
 
       m.repeatTween = rpt;

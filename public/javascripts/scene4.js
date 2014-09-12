@@ -7,34 +7,15 @@ timelines.scene_4 = function(onStart, onComplete) {
     onComplete: function(){
       onComplete();
 
-      // var rpt = new TimelineMax({paused: true, repeat: -1,
-      //   yoyo: true});
-
-      // rpt.to('#scene_4 .iconleft', 0.5, {
-      //   top: "28%",
-      // });
-
-      // rpt.to('#scene_4 .iconmiddle', 0.5, {
-      //   top: "28%",
-      // }, "-=0.3");
-
-      // rpt.to('#scene_4 .iconright', 0.5, {
-      //   top: "28%",
-      // }, "-=0.4");
-
-      // rpt.play();
-
-      // m.repeatTween = rpt;
-
 
       var rpt = new TimelineMax({paused: true});
 
       rpt.set('#scene_4', {perspective: 800});
-      // rpt.set(['#scene_4 .iconright', '#scene_4 .iconmiddle', '#scene_4 .iconleft'], {transformOrigin:"50% 50% 100"});
-      rpt.set(['#scene_4 .iconright', '#scene_4 .iconleft'], {transformOrigin:"50% 50% -100"});
-      rpt.set(['#scene_4 .iconmiddle'], {transformOrigin:"50% 50% 100"});
+      rpt.set(['#scene_4 .mountain', '#scene_4 .iconright', '#scene_4 .iconmiddle', '#scene_4 .iconleft'], {transformOrigin:"50% 50% 100"});
+      // rpt.set(['#scene_4 .iconright', '#scene_4 .iconleft'], {transformOrigin:"50% 50% -100"});
+      // rpt.set(['#scene_4 .mountain'], {transformOrigin:"50% 50% 100"});
       
-      rpt.fromTo(['#scene_4 .iconright', '#scene_4 .iconmiddle', '#scene_4 .iconleft'], 3, {
+      rpt.fromTo(['#scene_4 .mountain', '#scene_4 .iconright', '#scene_4 .iconmiddle', '#scene_4 .iconleft'], 4, {
         
       },{
         rotationY: 360,
