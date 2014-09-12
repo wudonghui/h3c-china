@@ -33,9 +33,6 @@ window.onload = function() {
   $('#scene_2 .spinner').remove();
 
 
-  // register swipe event
-  $$('#viewport').swipeUp(swipeUp);
-  $('#scene_2 .cover').click(openEnvelop);
 
   // register playScene event
   $('#viewport').on('playScene', playScene);
@@ -227,6 +224,11 @@ timelines.scene_2 = function(onStart, onComplete) {
       m.envelopArrowTween = tlm;
 
       tlm.play();
+
+
+      // register swipe event
+      $$('#viewport').swipeUp(swipeUp);
+      $('#scene_2 .cover').click(openEnvelop);
     }
   });
 
