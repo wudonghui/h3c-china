@@ -13,6 +13,8 @@ var m = {
 
   repeatTween: null,
 
+  openBookTween: null,
+
   splash: true // is on splash page
 };
 

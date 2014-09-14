@@ -8,7 +8,7 @@ timelines.scene_3 = function(onStart, onComplete) {
     onComplete: function(){
       onComplete();
 
-      var rpt = new TimelineMax({paused: true});
+      var rpt = new TimelineMax({paused: true, repeat: -1, repeatDelay: 1});
 
       rpt.fromTo('#scene_3 .star', 1.5, {
         scaleX: 0,
@@ -18,9 +18,11 @@ timelines.scene_3 = function(onStart, onComplete) {
         scaleX: 1,
         scaleY: 1,
         autoAlpha: true,
-        repeatDelay: 2,
-        repeat: -1,
+        // repeatDelay: 2,
+        // repeat: -1,
       });
+
+      rpt.to('#scene_3 .cloud', 3, {left: "-100%"}, "-=1.5");
 
       rpt.play();
 

@@ -14,26 +14,8 @@ timelines.open = function(onStart, onComplete) {
         $('.arrow').show();
 
 
-        // var rpt = new TimelineMax({paused: true});
 
-        // rpt.set('#scene_2', {perspective: 600});
-        // rpt.set('#scene_2 .icon', {transformOrigin:"50% 50% -150"});
-        // rpt.fromTo('#scene_2 .icon', 3, {
-          
-        // },{
-        //   rotationY: 360,
-        //   autoAlpha: true,
-        //   repeatDelay: 2,
-        //   repeat: -1,
-        //   ease: Power2.easeInOut
-        // });
-
-        // rpt.play();
-
-        // m.repeatTween = rpt;
-
-
-        var rpt = new TimelineMax({paused: true, repeat: -1, repeatDelay: 2});
+        var rpt = new TimelineMax({paused: true, repeat: -1, repeatDelay: 1});
 
         rpt.to('#scene_2 .icon', 0.1, {
           rotation: -20,
@@ -47,10 +29,29 @@ timelines.open = function(onStart, onComplete) {
           rotation: 0,
         });
 
+        rpt.to('#scene_2 .circle', 1 , {scaleX: 2, scaleY: 2, autoAlpha: 0}, '-=0.5');
+
         rpt.play();
 
         m.repeatTween = rpt;
 
+
+        $$('#scene_2 .book').tap(function(){
+
+          if(m.openBookTween) {
+
+            if(m.openBookTween.reversed()){
+              m.openBookTween.restart();
+            }else{
+              m.openBookTween.reverse();
+            }
+          }
+          else {
+            var openBookTween = TweenLite.to('#scene_2 .book', 1, {width:"100%", height:"96%", rotation: 720, top:"2%", left: '0%'});
+            m.openBookTween = openBookTween;
+          }
+
+        });
 
       }
   });
@@ -139,25 +140,26 @@ timelines.open = function(onStart, onComplete) {
       ease: Bounce.easeOut,
     }, "-=0.5")
 
-    // .fromTo('#scene_2 .circle', 1, {
-    //   scaleX: 0,
-    //   scaleY: 0
-    // }, {
-    //   scaleX: 1,
-    //   scaleY: 1,
-    //   autoAlpha: true,
-    // })
+
+    .fromTo('#scene_2 .circle', 1, {
+      scaleX: 0,
+      scaleY: 0
+    }, {
+      scaleX: 1,
+      scaleY: 1,
+      autoAlpha: true,
+    })
 
     .fromTo('#scene_2 .book', 1, {
       scaleX: 0,
       scaleY: 0
     }, {
-      rotation: 720,
+      rotation: 750,
       scaleX: 1,
       scaleY: 1,
       autoAlpha: true,
       ease: Power2.easeInOut
-    })
+    }, "-=1")
 
 
     .fromTo('#scene_2 .textbottom', 1, {
